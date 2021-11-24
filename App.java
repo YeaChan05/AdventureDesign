@@ -1,3 +1,4 @@
+/*
 import java.io.IOException;
 
 import javafx.application.Application;
@@ -135,3 +136,4 @@ public class App extends Application implements EventHandler<ActionEvent> {
         launch();
     }
 }
+*/

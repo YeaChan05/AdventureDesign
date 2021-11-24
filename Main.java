@@ -25,7 +25,7 @@ public class Main{
         //     CaculateProbability cal=new CaculateProbability(list,num);
         //     System.out.println(cal.Caculater());
         // }
-        App.Launch();
+        //App.Launch();
         //모든 이벤트 실행 시 시간 소모
     }
 }   
