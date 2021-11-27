@@ -7,7 +7,6 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class Account {
 	private String id; // 아이디 
 	private String pw; // 패스워드 
