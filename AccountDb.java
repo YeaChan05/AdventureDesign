@@ -2,6 +2,7 @@ import java.util.ArrayList;
 public class AccountDb {
 	
 	private static ArrayList<String[]> userData = new ArrayList<>();
+	private int jawel = 0;
 	
 	// 유저 생성 
 	public void setUser(String id, String password, String name ) {
@@ -10,16 +11,27 @@ public class AccountDb {
 	}
 	
 	// 들어온 id 와 비밀번호가 일치하는지 체크 
-	public boolean check(String id, String password) {
+	public void check(String id, String password) {
 		for(int i=0; i< userData.size(); i++) {
 			if(id.equals(userData.get(i)[0])) {
 				if(password.equals(userData.get(i)[1])) {
-					return true;
+					System.out.println("로그인성공하셨습니다.");
 				}
+				else {
+					System.out.println("비밀번호가 틀렸습니다.");
+				}
+			} 
+			else {
+				System.out.println("아이디가 틀렸습니다.");
 			}
+			
+			
+			
 		}
-		return false;
+		
 	}
+	
+	
 	
 	// 개발자가 계정을 보기위한 관리 
 	@Override
