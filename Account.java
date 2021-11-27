@@ -77,14 +77,7 @@ public class Account {
 		
 	}
 	
-	//id 중복 체크 
-	public boolean idCheck(String id) {
-        boolean check = true;
-        Account user = FindById(id);
-        if(user == null)
-            check = false;
-        return check;
-    }
+
 	
 	
 	// 로그인 
@@ -134,6 +127,15 @@ public class Account {
 		
 	}
 	
+	//id 중복 체크 
+		public boolean idCheck(String id) {
+	        boolean check = true;
+	        Account user = FindById(id);
+	        if(user == null)
+	            check = false;
+	        return check;
+	    }
+	
 	
 	
 	// user의 id가 있는지 확인 
@@ -154,7 +156,8 @@ public class Account {
 	
 	//로그인과 회원가입 출력  
 	public void run() {
-		while(true) {
+		int gamestart =1;
+		while(gamestart !=0) {
 			System.out.println("---공대생키우기 메뉴선택---");
 			System.out.println("1.회원가입");
 			System.out.println("2.로그인");
@@ -168,6 +171,7 @@ public class Account {
 			case 2:
 				userLogin();
 				checkCharacter();
+				gamestart = 0;
 				break;
 			case 3:
 				System.out.println("공대생 키우기 게임 종료");
