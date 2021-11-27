@@ -7,7 +7,7 @@ public class AccountDbUser {
 	}
 	
 	// 유저 정보와 대조한뒤 로그인 하기 
-	public void getDbUser(String id, String password) {
+	public void isDbUser(String id, String password) {
 		if(db.check(id, password)) {
 			System.out.println("로그인 성공");
 		}
@@ -16,7 +16,7 @@ public class AccountDbUser {
 		}
 	}
 	
-	public void getDb() {
+	public void isDb() {
 		System.out.println("==========DB출력===========");
 		System.out.println(db);
 	}

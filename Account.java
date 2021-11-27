@@ -10,6 +10,7 @@ public class Account {
 	private Character lastUsedCharacter;
 	private List<Character> list = new ArrayList<>();
 	private List<Account> users = new ArrayList<>();
+	private boolean loginSuccess = false;
 	 
 	Scanner in = new Scanner(System.in);
 
@@ -24,16 +25,20 @@ public class Account {
 		
 	}
 	
-	public String getId() {
+	public String isId() {
 		return this.id;
 	}
 	
-	public String getPw() {
+	public String isPw() {
 		return this.pw;
 	}
 	
-	public String getName() {
+	public String isName() {
 		return this.name;
+	}
+
+	public boolean isLoginSuccess() {
+		return loginSuccess;
 	}
 	
 	public void setId(String id) {
@@ -50,6 +55,10 @@ public class Account {
 	
 	public void setJewel(int jewel) {
 		this.jewel = jewel;
+	}
+
+	public void setLoginSuccess(boolean loginSuccess) {
+		this.loginSuccess = loginSuccess;
 	}
 	
 	// 회원가입 
@@ -93,11 +102,10 @@ public class Account {
 		} else {
 			if (user == null) {
 				System.out.println("등록되지 않은사용자입니다.");
-			} else if(user.getPw().equals(pw)) {
-				System.out.println(user.getId() + "님께서 로그인 하셨습니다.");
+			} else if(user.isPw().equals(pw)) {
+				System.out.println(user.isId() + "님께서 로그인 하셨습니다.");
 				System.out.println("공대생 키우기 게임을 시작합니다.");
-				
-				
+				loginSuccess=true;
 			} else {
 				System.out.println("비밀번호가 틀렸습니다.");
 			}
@@ -105,6 +113,10 @@ public class Account {
 		
 	}
 	
+	
+
+	
+
 	// 캐릭터가 있는지 없는지 찾는 함수 
 	public void checkCharacter() {
 		if(list.isEmpty()) {
@@ -141,7 +153,7 @@ public class Account {
 	// user의 id가 있는지 확인 
 	public Account FindById(String id) {
         for(Account account : users) {
-            if(account.getId().equals(id)) {
+            if(account.isId().equals(id)) {
                 return account;
             }
         }
