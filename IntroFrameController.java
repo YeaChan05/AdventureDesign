@@ -63,19 +63,6 @@ public class IntroFrameController extends Application implements EventHandler<Ac
         loginwindow.setTitle("시작 화면");
         loginwindow.setScene(gamestart());
         loginwindow.show();
-
-        //if(){
-            //loginwindow.close();
-
-            gamewindow=new Stage();
-            gamewindow.setWidth(1500);
-            gamewindow.setHeight(800);
-            gamewindow.setX(200);
-            gamewindow.setY(50);
-            gamewindow.setTitle("게임 화면");
-            gamewindow.setScene(gameplay());
-            gamewindow.show();
-        //}로그인 성공시 해당 코드 작동
     }
 
   
@@ -142,7 +129,7 @@ public class IntroFrameController extends Application implements EventHandler<Ac
 
         Button loginAccount = new Button("Login");
         grid.add(loginAccount,1,3);
-        loginAccount.setOnAction(e->db.check(id_text,pw_text));
+        loginAccount.setOnAction(e->db.check(id_text,pw_text));//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
         Button createAcount = new Button("create acount");
         grid.add(createAcount,1,4);
@@ -190,7 +177,7 @@ public class IntroFrameController extends Application implements EventHandler<Ac
         Button creat = new Button("Creat!");
         grid.add(creat,1,4);
         creat.setOnAction(AtionEvent->{
-            db.setUser(newId, newPw, newName);
+            db.setUser(newId, newPw);//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
            // if(){계정 생성에 성공하면 종료 가능하도록 조건문 만들기
                 window.close();
          //   }
