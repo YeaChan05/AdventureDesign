@@ -4,8 +4,8 @@ public class AccountDb {
 	private static ArrayList<String[]> userData = new ArrayList<>();
 	
 	// 유저 생성 
-	public void setUser(String id, String password, String name ) {
-		String[] temp = { id, password,name};
+	public void setUser(String id, String password) {
+		String[] temp = { id, password};
 		userData.add(temp);
 	}
 	

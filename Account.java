@@ -1,4 +1,9 @@
 import java.util.Scanner;
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,62 +66,6 @@ public class Account {
 		this.loginSuccess = loginSuccess;
 	}
 	
-	// 회원가입 
-	public void userJoin() {
-		in.nextLine();
-		String id = getStrInput("Id:");
-		String pw = getStrInput("PassWord:");
-		String pw2 = getStrInput("PassWord Confirm:");
-		String name = getStrInput("Name:");
-		
-		// 공백이 입력될 경우  
-		if(id.isEmpty() || pw.isEmpty()|| pw2.isEmpty() || name.isEmpty())
-		{
-			System.out.println("공백을 입력하지마세여.");
-		} else {
-			if(idCheck(id)) {
-				System.out.println("중복된 ID입니다.");
-			} else if(pw.equals(pw2)) {
-				users.add(new Account(id, pw, name));
-				System.out.println(id + "님 회원가입을 축하드립니다.");
-			} else {
-				System.out.println("비밀번호를 확인해주세요.");
-			}
-		}
-		
-	}
-	
-
-	
-	
-	// 로그인 
-	public void userLogin() {
-		in.nextLine();
-		String id = getStrInput("Id:");
-		String pw = getStrInput("PassWord:");
-		
-		Account user = FindById(id);
-		if(id.isEmpty() || pw.isEmpty())
-		{
-			System.out.println("공백을 입력하지마세여.");
-		} else {
-			if (user == null) {
-				System.out.println("등록되지 않은사용자입니다.");
-			} else if(user.isPw().equals(pw)) {
-				System.out.println(user.isId() + "님께서 로그인 하셨습니다.");
-				System.out.println("공대생 키우기 게임을 시작합니다.");
-				loginSuccess=true;
-			} else {
-				System.out.println("비밀번호가 틀렸습니다.");
-			}
-		}
-		
-	}
-	
-	
-
-	
-
 	// 캐릭터가 있는지 없는지 찾는 함수 
 	public void checkCharacter() {
 		if(list.isEmpty()) {
@@ -138,59 +87,5 @@ public class Account {
 		list.add(new Character(cname, true));
 		
 	}
-	
-	//id 중복 체크 
-		public boolean idCheck(String id) {
-	        boolean check = true;
-	        Account user = FindById(id);
-	        if(user == null)
-	            check = false;
-	        return check;
-	    }
-	
-	
-	
-	// user의 id가 있는지 확인 
-	public Account FindById(String id) {
-        for(Account account : users) {
-            if(account.isId().equals(id)) {
-                return account;
-            }
-        }
-        return null;
-    }
-	
-	
-	public String getStrInput(String msg) {
-		System.out.println(msg);
-		return in.nextLine();
-	}
-	
-	//로그인과 회원가입 출력  
-	public void run() {
-		int gamestart =1;
-		while(gamestart !=0) {
-			System.out.println("---공대생키우기 메뉴선택---");
-			System.out.println("1.회원가입");
-			System.out.println("2.로그인");
-			System.out.println("3.게임 종료");
-			
-			int choice = in.nextInt();
-			switch(choice) {
-			case 1:
-				userJoin();
-				break;
-			case 2:
-				userLogin();
-				checkCharacter();
-				gamestart = 0;
-				break;
-			case 3:
-				System.out.println("공대생 키우기 게임 종료");
-				return;
-			}
-		}
-	}
-
 
 }
