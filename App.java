@@ -39,8 +39,8 @@ public class App extends Application implements EventHandler<ActionEvent> {
        window.setX(200);
        window.setY(50);
       
-       Label label1 = new Label("Welcome to the first scene!");
-       Label label2 = new Label("this is a second scene!");
+       Label label1 = new Label("게임 시작화면");
+       //Label label2 = new Label("this is a second scene!");
 
        Button button_login = new Button("Login");
        button_login.setOnAction(e->Login());
@@ -105,15 +105,18 @@ public class App extends Application implements EventHandler<ActionEvent> {
 
         TextField userTextField = new TextField(); 
         grid.add(userTextField, 1, 1);
+        String id_text=userTextField.getText();
 
         Label pw = new Label("Password:"); 
         grid.add(pw, 0,2);
 
         PasswordField pwBox = new PasswordField(); 
         grid.add(pwBox, 1, 2);
+        String pw_text=userTextField.getText();
 
         Button loginAccount = new Button("Login");
         grid.add(loginAccount,1,3);
+        loginAccount.setOnAction(e->checkAccount(id_text,pw_text));
 
         grid.setAlignment(Pos.CENTER);
         grid.setHgap(10);
@@ -122,6 +125,11 @@ public class App extends Application implements EventHandler<ActionEvent> {
 
         window.setScene(scene);
         window.show();
+
+    }
+
+    public static void checkAccount(String id, String pw){
+
 
     }
 
