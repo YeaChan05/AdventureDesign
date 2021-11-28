@@ -25,9 +25,8 @@ public class Game {
 	// 게임시작, 회원가입, 로그인, (게임 종료)
 	public void initStage() {
     	System.out.println(am.getAccounts());
-    	// 초기유저를 선언 (./init/data/accounts.txt 에서 읽어오기)
     	
-    	
+    
 		System.out.println("-----------공대생 게임 키우기---------");
 		System.out.println("1. 회원가입  2. 로그인  3. 게임종료");
 		
@@ -35,11 +34,10 @@ public class Game {
 		if(choice == 1) {
 			String id = Main.getStrInput("Id :");
 	    	String password = Main.getStrInput("Password :");
-	    	String password2 = Main.getStrInput("Password2 :");
-	    	String name = Main.getStrInput("Name :");
 	    	// Sign-up
-	    	if (am.checkSignUpInput(id, password, password2, name)){
-	    		am.addAccount(new Account(id, password, name));
+	    	if (am.checkSignUpInput(id, password)){
+	    		am.addAccount(new Account(id, password));
+	    		// 파일에다가 1줄 바로 저장 
 	    	}
 		}
 		else if (choice == 2) {
@@ -79,5 +77,33 @@ public class Game {
 	// 게임중, (게임종료)
 	public void gameStage() {
 		
+	}
+	
+	
+	// GUI 이벤트 핸들러 구현 
+	// 계정 생성 
+	public void setUser(String newId, String newPw) {
+		// Sign-up
+    	if (am.checkSignUpInput(newId, newPw)){
+    		am.addAccount(new Account(newId, newPw));
+    		
+    	}
+	}
+	
+	// 로그인 
+	public void check(String id_text, String pw_text) {
+		Account currentAccount;
+    	if(am.checkSignInInput(id_text, pw_text)) {
+    		currentAccount = am.findById(id_text);
+    		if(currentAccount == null) {
+    			// 등록된 아이디가 없다. 
+    		} else {
+    			if(currentAccount.getPw().equals(pw_text)) {
+	    			// 로그인 성공  
+	    		} else {
+	    			// 비밀번호 틀림 
+	    		}
+    		}
+    	}
 	}
 }
