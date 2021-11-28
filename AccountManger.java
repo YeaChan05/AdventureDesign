@@ -34,12 +34,12 @@ public class AccountManger {
 		return null;
 	}
 	
-	public boolean checkSignUpInput(String id,String pw, String pw2,String name) {
-		if (id.isEmpty() ||pw.isEmpty() || pw2.isEmpty() ||  name.isEmpty()) {
+	public boolean checkSignUpInput(String id,String pw) {
+		if (id.isEmpty() ||pw.isEmpty()) {
 			System.out.println("공백을 입력하지마세요.");
 			return false;
 		}
-		if (!pw.equals(pw2)) {
+		if (!pw.equals(pw)) {
             System.out.println("비밀번호를 확인해주세요.");
             return false;
         }

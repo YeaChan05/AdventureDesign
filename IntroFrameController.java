@@ -1,34 +1,35 @@
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-
-import javafx.fxml.FXML;
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import javafx.event.EventHandler;
-import javafx.fxml.FXMLLoader;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.control.*;
-import javafx.scene.text.*;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 public class IntroFrameController extends Application implements EventHandler<ActionEvent>{
-    static Stage window;
-    static Scene scene2;
-    private static AccountDb db=new AccountDb();
-    private static AccountDbUser db_user=new AccountDbUser();
+    private Stage window;
+    private Stage primeStage=new Stage();
+    private Account account= new Account();
+    private static boolean loginSuccess=false;
     @FXML
     private ResourceBundle resources;
 
@@ -36,75 +37,29 @@ public class IntroFrameController extends Application implements EventHandler<Ac
     private URL location;
 
     @FXML
-    void initialize() {
+    private AnchorPane anchorpane;
 
-    }
+    @FXML
+    private Text gamename;
 
-    @Override
-    public void handle(ActionEvent arg0) {
-        // TODO Auto-generated method stub
-        
-    }
+    @FXML
+    private ImageView introimage;
+
+    @FXML
+    private Button loginbtn;
     
-    public static void Launch() {
-        launch();
-    }
+    @FXML
+    void initialize() {
+        assert anchorpane != null : "fx:id=\"anchorpane\" was not injected: check your FXML file 'IntroFrame.fxml'.";
+        assert gamename != null : "fx:id=\"gamename\" was not injected: check your FXML file 'IntroFrame.fxml'.";
+        assert introimage != null : "fx:id=\"introimage\" was not injected: check your FXML file 'IntroFrame.fxml'.";
+        assert loginbtn != null : "fx:id=\"loginbtn\" was not injected: check your FXML file 'IntroFrame.fxml'.";
 
-    @Override
-    public void start(Stage stage) throws Exception {
+    }
+    @FXML
+    public void Login(){
         
-        Stage loginwindow;
-        Stage gamewindow;
-        loginwindow = stage;
-        loginwindow.setWidth(1500);
-        loginwindow.setHeight(800);
-        loginwindow.setX(200);
-        loginwindow.setY(50);
-        loginwindow.setTitle("시작 화면");
-        loginwindow.setScene(gamestart());
-        loginwindow.show();
-    }
-
-  
-
-    @Override
-    public void stop() throws Exception {
-        // TODO Auto-generated method stub
-        super.stop();
-    }
-
-    public Scene gamestart(){
-        window = new Stage();
-        Scene startscene;
-        window.initModality(Modality.APPLICATION_MODAL);
-        window.setWidth(1500);
-        window.setHeight(800);
-        window.setX(200);
-        window.setY(50);
-        Label label1 = new Label("게임 시작화면");
-        Button button_login = new Button("Login");
-        button_login.setOnAction(e->Login());
- 
-        VBox layout_gamestart = new VBox(100);
-        layout_gamestart.getChildren().addAll(label1,button_login);
-        startscene = new Scene(layout_gamestart);
-        layout_gamestart.setAlignment(Pos.CENTER);
-        window.setScene(startscene);
-        return startscene;
-    }
-
-    private Scene gameplay() throws IOException {
-        Parent root =FXMLLoader.load(getClass().getResource("IntroFrame.fxml"));
-        window = new Stage();
-        Scene playscene;
-        window.initModality(Modality.APPLICATION_MODAL);
-      
-        playscene=new Scene(root);
-        return playscene;
-    }
-
-    public static void Login(){
-        window = new Stage();
+        Stage window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
         GridPane grid = new GridPane();
         Scene scene = new Scene(grid, 300, 275);
@@ -118,19 +73,32 @@ public class IntroFrameController extends Application implements EventHandler<Ac
 
         TextField userTextField = new TextField(); 
         grid.add(userTextField, 1, 1);
-        String id_text=userTextField.getText();
 
         Label pw = new Label("Password:"); 
         grid.add(pw, 0,2);
 
         PasswordField pwBox = new PasswordField(); 
         grid.add(pwBox, 1, 2);
-        String pw_text=userTextField.getText();
 
         Button loginAccount = new Button("Login");
         grid.add(loginAccount,1,3);
-        loginAccount.setOnAction(e->db.check(id_text,pw_text));//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
+        loginAccount.setOnAction(event->{
+            try {
+                if(account.checkAccountFile(userTextField.getText(),pwBox.getText())){
+                   
+                    System.out.println("close primeStage");
+                    // Platform.exit();
+                    
+                    window.close();
+                }
+                else{
+                    System.out.println("failed to login");
+                }
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        });
         Button createAcount = new Button("create acount");
         grid.add(createAcount,1,4);
         createAcount.setOnAction(e->createAcount());
@@ -145,8 +113,7 @@ public class IntroFrameController extends Application implements EventHandler<Ac
 
     }
 
-
-    public static void createAcount() {
+    public void createAcount() {
         window = new Stage();
         GridPane grid = new GridPane();
         Scene scene = new Scene(grid, 300, 275);
@@ -155,35 +122,35 @@ public class IntroFrameController extends Application implements EventHandler<Ac
         scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
         grid.add(scenetitle, 0, 0, 2, 1);
 
-        Label name = new Label("Name:"); 
-        grid.add(name, 0,1);
         Label id = new Label("User Name:"); 
-        grid.add(id, 0, 2);
+        grid.add(id, 0, 1);
         Label pw = new Label("Password:"); 
-        grid.add(pw, 0,3);
+        grid.add(pw, 0,2);
        
-        TextField nameField = new TextField(); 
-        grid.add(nameField, 1, 1);
-        String newName=nameField.getText();
 
         TextField idField = new TextField(); 
-        grid.add(idField, 1, 2);
-        String newId=idField.getText();        
+        grid.add(idField, 1, 1);     
 
-        PasswordField pwField = new PasswordField(); 
-        grid.add(pwField, 1, 3);
-        String newPw=pwField.getText();
-
+        TextField pwField = new PasswordField(); 
+        grid.add(pwField, 1, 2);
         Button creat = new Button("Creat!");
-        grid.add(creat,1,4);
+        grid.add(creat,1,3);
         creat.setOnAction(AtionEvent->{
-            db.setUser(newId, newPw);//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-           // if(){계정 생성에 성공하면 종료 가능하도록 조건문 만들기
-                window.close();
-         //   }
+            try {
+                if(account.checkAccountFile(idField.getText(), pwField.getText())){
+                    System.out.println("이미 존재하는 계정입니다.");//화면 출력 필요
+                }
+                else{
+                    account.creatAccount(idField.getText(), pwField.getText());
+                    System.out.println(idField.getText());
+                    System.out.println(pwField.getText());
+                    window.close();
+                }
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
             });
-
-        
         grid.setAlignment(Pos.CENTER);
         grid.setHgap(10);
         grid.setVgap(10);
@@ -194,5 +161,24 @@ public class IntroFrameController extends Application implements EventHandler<Ac
 
     }
 
-   
+    @Override
+    public void start(Stage primeStage) throws IOException {
+        Parent root =FXMLLoader.load(getClass().getResource("IntroFrame.fxml"));
+        
+        primeStage.setScene(new Scene(root));
+        this.primeStage=primeStage;
+        this.primeStage.show();
+    }
+
+    public static boolean isloginSuccess(){
+        return loginSuccess;
+    }
+    @Override
+    public void handle(ActionEvent arg0) {
+        // TODO Auto-generated method stub
+        
+    }
+    public static void Launch() {
+        launch();
+    }
 }
