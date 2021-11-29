@@ -31,7 +31,6 @@ public class Main{
     	// 프로그램 전체 구조
     	
     	Game app = new Game();
-
         while (true) {
             while (true) {
                 // 게임 시작, 회원가입, 로그인, (게임 종료)
