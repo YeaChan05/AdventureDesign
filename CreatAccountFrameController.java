@@ -1,5 +1,8 @@
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -9,7 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 public class CreatAccountFrameController {
-
+    private Account account=new Account();
     @FXML
     private ResourceBundle resources;
 
@@ -35,8 +38,16 @@ public class CreatAccountFrameController {
     private PasswordField pwfield;
 
     @FXML
-    void OnCreat(ActionEvent event) {
-
+    void OnCreat(ActionEvent event) throws IOException {
+        if(account.checkAccountFile(idtextfield.getText(), pwfield.getText())){
+            System.out.println("alredy exist");
+        }
+        else {
+            account.creatAccount(idtextfield.getText(), pwfield.getText());
+            System.out.println("successfully creat");
+        }
+            
+            
     }
 
     @FXML

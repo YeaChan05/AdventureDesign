@@ -20,7 +20,7 @@
             <Font size="23.0" />
          </font>
       </Text>
-      <Button fx:id="loginbtn" layoutX="112.0" layoutY="227.0" mnemonicParsing="false" onAction="#OnLogin" prefHeight="22.0" prefWidth="62.0" text="login" />
+      <Button fx:id="loginbutton" layoutX="112.0" layoutY="227.0" mnemonicParsing="false" onAction="#OnLogin" prefHeight="22.0" prefWidth="62.0" text="login" />
       <Button fx:id="creatbutton" layoutX="184.0" layoutY="227.0" mnemonicParsing="false" onAction="#OnCreatAccount" prefHeight="22.0" prefWidth="89.0" text="creat account" />
    </children>
 </AnchorPane>

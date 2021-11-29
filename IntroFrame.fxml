@@ -23,7 +23,7 @@
             <Font name="System Bold" size="41.0" />
          </font>
       </Text>
-      <Button fx:id="loginbtn" layoutX="587.0" layoutY="446.0" mnemonicParsing="false" onAction="#Login" prefHeight="41.0" prefWidth="126.0" text="Login">
+      <Button fx:id="loginbutton" layoutX="587.0" layoutY="446.0" mnemonicParsing="false" onAction="#Login" prefHeight="41.0" prefWidth="126.0" text="Login">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
