@@ -1,6 +1,10 @@
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javax.swing.text.View;
+
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -48,14 +52,14 @@ public class LoginFrameController {
     private PasswordField pwfield;
 
     @FXML
-    public void OnLogin(ActionEvent event) throws IOException {
+    public void OnLogin(ActionEvent event) throws Exception {
         if(account.checkAccountFile(idtextfield.getText(),pwfield.getText())){
             System.out.println("login succes!");
             Node node =(Node)event.getSource();
             loginStage=(Stage)node.getScene().getWindow();
             account_string=idtextfield.getText()+"/"+pwfield.getText();
             loginStage.close();
-            //con.stop();
+            con.closeStage();
         }
         else{
             System.out.println("login failed!");

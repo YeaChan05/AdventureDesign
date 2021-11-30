@@ -61,8 +61,12 @@ public class IntroFrameController extends Application implements EventHandler<Ac
     public void Login() throws IOException{
         Stage window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
-        Parent root=FXMLLoader.load(getClass().getResource("LoginFrame.fxml"));
-        Scene scene = new Scene(root, 300, 275);
+        //Parent root=FXMLLoader.load(getClass().getResource("LoginFrame.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginFrame.fxml"));
+        Parent parent = loader.load();
+        con=loader.getController();
+        con.setCon(this);
+        Scene scene = new Scene(parent, 300, 275);
         window.setScene(scene);
         window.show();
     }
@@ -70,10 +74,6 @@ public class IntroFrameController extends Application implements EventHandler<Ac
     @Override
     public void start(Stage stage) throws IOException {
         Parent root =FXMLLoader.load(getClass().getResource("IntroFrame.fxml"));
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginFrame.fxml"));
-        Object parent = loader.load();
-        con=loader.getController();
-        con.setCon(this);
         primeStage.setScene(new Scene(root));
         primeStage.show();
     }
@@ -93,9 +93,16 @@ public class IntroFrameController extends Application implements EventHandler<Ac
         launch();
     }
     public void closeStage() {
-		Stage stage = (Stage) anchorpane.getScene().getWindow();
+		Stage stage = (Stage)anchorpane.getScene().getWindow();
 		Platform.runLater(() -> {
-			stage.close();
+            stage.close();
+            try {
+                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("test.fxml"))));
+                stage.show();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
 		});
 	}
     
