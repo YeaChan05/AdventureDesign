@@ -16,25 +16,25 @@ public class Main{
         IntroFrameController.Launch();
         
 
-    	// 프로그램 전체 구조
+    	// // 프로그램 전체 구조
     	
-    	Game app = new Game();
-        while (true) {
-            while (true) {
-                // 게임 시작, 회원가입, 로그인, (게임 종료)
-                app.initStage();
-            }
-            /*
-            while (true) {
-                // 캐릭터 생성, 캐릭터 선택, (게임 종료)
-                app.characterStage();
-            }
-            while (true) {
-                // 게임중, (게임 종료)
-                app.gameStage();
-            }
-            */
-        }
+    	// Game app = new Game();
+        // while (true) {
+        //     while (true) {
+        //         // 게임 시작, 회원가입, 로그인, (게임 종료)
+        //         app.initStage();
+        //     }
+        //     /*
+        //     while (true) {
+        //         // 캐릭터 생성, 캐릭터 선택, (게임 종료)
+        //         app.characterStage();
+        //     }
+        //     while (true) {
+        //         // 게임중, (게임 종료)
+        //         app.gameStage();
+        //     }
+        //     */
+        // }
        
         /* JavaFx 부분 
         Random rand = new Random();
@@ -49,11 +49,9 @@ public class Main{
             CaculateProbability cal=new CaculateProbability(list,num);
             System.out.println(cal.Caculater());
         }
-        App.Launch();
         모든 이벤트 실행 시 시간 소모
         */
-  
-    	
+        IntroFrameController.Launch();
            
     }
     

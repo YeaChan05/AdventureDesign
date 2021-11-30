@@ -92,7 +92,7 @@ public class IntroFrameController extends Application implements EventHandler<Ac
 		Platform.runLater(() -> {
             stage.close();
             try {
-                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("test.fxml"))));
+                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("GameFrame.fxml"))));
                 stage.show();
             } catch (IOException e) {
                 // TODO Auto-generated catch block

@@ -1,109 +1,136 @@
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
-import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+
 public class GameFrameController {
-	
-	    @FXML
-	    private ResourceBundle resources;
 
-	    @FXML
-	    private URL location;
+    @FXML
+    private ResourceBundle resources;
 
-	    @FXML
-	    private Label activenessLabel;
+    @FXML
+    private URL location;
 
-	    @FXML
-	    private ProgressBar activenessProgressBar;
+    @FXML
+    private Label activenessLabel;
 
-	    @FXML
-	    private TextField activenessTextField;
+    @FXML
+    private ProgressBar activenessProgressBar;
 
-	    @FXML
-	    private Button downtownEventButton;
+    @FXML
+    private Text activenessText;
 
-	    @FXML
-	    private Label healthLabel;
+    @FXML
+    private Button downtownButton;
 
-	    @FXML
-	    private ProgressBar healthProgressBar;
+    @FXML
+    private Label healthLabel;
 
-	    @FXML
-	    private TextField healthTextField;
+    @FXML
+    private ProgressBar healthProgressBar;
 
-	    @FXML
-	    private Label intelligenceLabel;
+    @FXML
+    private Text healthText;
 
-	    @FXML
-	    private ProgressBar intelligenceProgressBar;
+    @FXML
+    private Label intelligenceLabel;
 
-	    @FXML
-	    private TextField intelligenceTextField;
+    @FXML
+    private ProgressBar intelligenceProgressBar;
 
-	    @FXML
-	    private Label interestLabel;
+    @FXML
+    private Text intelligenceText;
 
-	    @FXML
-	    private ProgressBar interestProgressBar;
+    @FXML
+    private Label interestLabel;
 
-	    @FXML
-	    private TextField interestTextField;
+    @FXML
+    private ProgressBar interestProgressBar;
 
-	    @FXML
-	    private Label moneyLabel;
+    @FXML
+    private Text interestText;
 
-	    @FXML
-	    private TextField moneyTextField;
+    @FXML
+    private Label moneyLabel;
 
-	    @FXML
-	    private ImageView optionImageView;
+    @FXML
+    private Text moneyText;
 
-	    @FXML
-	    private Label semesterLabel;
+    @FXML
+    private ImageView optionImageView;
 
-	    @FXML
-	    private TextField semesterTextField;
+    @FXML
+    private Label semesterLabel;
 
-	    @FXML
-	    private Button universityEventButton;
+    @FXML
+    private Text semesterText;
 
-	    @FXML
-	    private ImageView universityImageView;
+    @FXML
+    private Button universityButton;
 
-	    @FXML
-	    private ImageView userImageView;
+    @FXML
+    private ImageView universityImageView;
 
-	    @FXML
-	    void initialize() {
-	        assert activenessLabel != null : "fx:id=\"activenessLabel\" was not injected: check your FXML file 'Untitled'.";
-	        assert activenessProgressBar != null : "fx:id=\"activenessProgressBar\" was not injected: check your FXML file 'Untitled'.";
-	        assert activenessTextField != null : "fx:id=\"activenessTextField\" was not injected: check your FXML file 'Untitled'.";
-	        assert downtownEventButton != null : "fx:id=\"downtownEventButton\" was not injected: check your FXML file 'Untitled'.";
-	        assert healthLabel != null : "fx:id=\"healthLabel\" was not injected: check your FXML file 'Untitled'.";
-	        assert healthProgressBar != null : "fx:id=\"healthProgressBar\" was not injected: check your FXML file 'Untitled'.";
-	        assert healthTextField != null : "fx:id=\"healthTextField\" was not injected: check your FXML file 'Untitled'.";
-	        assert intelligenceLabel != null : "fx:id=\"intelligenceLabel\" was not injected: check your FXML file 'Untitled'.";
-	        assert intelligenceProgressBar != null : "fx:id=\"intelligenceProgressBar\" was not injected: check your FXML file 'Untitled'.";
-	        assert intelligenceTextField != null : "fx:id=\"intelligenceTextField\" was not injected: check your FXML file 'Untitled'.";
-	        assert interestLabel != null : "fx:id=\"interestLabel\" was not injected: check your FXML file 'Untitled'.";
-	        assert interestProgressBar != null : "fx:id=\"interestProgressBar\" was not injected: check your FXML file 'Untitled'.";
-	        assert interestTextField != null : "fx:id=\"interestTextField\" was not injected: check your FXML file 'Untitled'.";
-	        assert moneyLabel != null : "fx:id=\"moneyLabel\" was not injected: check your FXML file 'Untitled'.";
-	        assert moneyTextField != null : "fx:id=\"moneyTextField\" was not injected: check your FXML file 'Untitled'.";
-	        assert optionImageView != null : "fx:id=\"optionImageView\" was not injected: check your FXML file 'Untitled'.";
-	        assert semesterLabel != null : "fx:id=\"semesterLabel\" was not injected: check your FXML file 'Untitled'.";
-	        assert semesterTextField != null : "fx:id=\"semesterTextField\" was not injected: check your FXML file 'Untitled'.";
-	        assert universityEventButton != null : "fx:id=\"universityEventButton\" was not injected: check your FXML file 'Untitled'.";
-	        assert universityImageView != null : "fx:id=\"universityImageView\" was not injected: check your FXML file 'Untitled'.";
-	        assert userImageView != null : "fx:id=\"userImageView\" was not injected: check your FXML file 'Untitled'.";
+    @FXML
+    private ImageView userImageView;
 
-	    }
+    @FXML
+    void OndowntownButton(ActionEvent event) throws IOException {
+        Stage window = new Stage();
+        window.initModality(Modality.APPLICATION_MODAL);
+        Parent root=FXMLLoader.load(getClass().getResource("CreatAccountFrame.fxml"));
+        Scene scene = new Scene(root);
+        window.setScene(scene);
+        window.show();
+    }
 
+    @FXML
+    void OnuniversityButton(ActionEvent event) throws IOException {
+        Stage window = new Stage();
+        window.initModality(Modality.APPLICATION_MODAL);
+        Parent root=FXMLLoader.load(getClass().getResource("CreatAccountFrame.fxml"));
+        Scene scene = new Scene(root, 300, 275);
+        window.setScene(scene);
+        window.show();
+    }
+
+    @FXML
+    void initialize() {
+        assert activenessLabel != null : "fx:id=\"activenessLabel\" was not injected: check your FXML file 'GameFrame.fxml'.";
+        assert activenessProgressBar != null : "fx:id=\"activenessProgressBar\" was not injected: check your FXML file 'GameFrame.fxml'.";
+        assert activenessText != null : "fx:id=\"activenessText\" was not injected: check your FXML file 'GameFrame.fxml'.";
+        assert downtownButton != null : "fx:id=\"downtownButton\" was not injected: check your FXML file 'GameFrame.fxml'.";
+        assert healthLabel != null : "fx:id=\"healthLabel\" was not injected: check your FXML file 'GameFrame.fxml'.";
+        assert healthProgressBar != null : "fx:id=\"healthProgressBar\" was not injected: check your FXML file 'GameFrame.fxml'.";
+        assert healthText != null : "fx:id=\"healthText\" was not injected: check your FXML file 'GameFrame.fxml'.";
+        assert intelligenceLabel != null : "fx:id=\"intelligenceLabel\" was not injected: check your FXML file 'GameFrame.fxml'.";
+        assert intelligenceProgressBar != null : "fx:id=\"intelligenceProgressBar\" was not injected: check your FXML file 'GameFrame.fxml'.";
+        assert intelligenceText != null : "fx:id=\"intelligenceText\" was not injected: check your FXML file 'GameFrame.fxml'.";
+        assert interestLabel != null : "fx:id=\"interestLabel\" was not injected: check your FXML file 'GameFrame.fxml'.";
+        assert interestProgressBar != null : "fx:id=\"interestProgressBar\" was not injected: check your FXML file 'GameFrame.fxml'.";
+        assert interestText != null : "fx:id=\"interestText\" was not injected: check your FXML file 'GameFrame.fxml'.";
+        assert moneyLabel != null : "fx:id=\"moneyLabel\" was not injected: check your FXML file 'GameFrame.fxml'.";
+        assert moneyText != null : "fx:id=\"moneyText\" was not injected: check your FXML file 'GameFrame.fxml'.";
+        assert optionImageView != null : "fx:id=\"optionImageView\" was not injected: check your FXML file 'GameFrame.fxml'.";
+        assert semesterLabel != null : "fx:id=\"semesterLabel\" was not injected: check your FXML file 'GameFrame.fxml'.";
+        assert semesterText != null : "fx:id=\"semesterText\" was not injected: check your FXML file 'GameFrame.fxml'.";
+        assert universityButton != null : "fx:id=\"universityButton\" was not injected: check your FXML file 'GameFrame.fxml'.";
+        assert universityImageView != null : "fx:id=\"universityImageView\" was not injected: check your FXML file 'GameFrame.fxml'.";
+        assert userImageView != null : "fx:id=\"userImageView\" was not injected: check your FXML file 'GameFrame.fxml'.";
+
+    }
+    public void AdjactivenessText(){
+        //activenessText.setText(activenessProgressBar);
+    }
 }
-
-
