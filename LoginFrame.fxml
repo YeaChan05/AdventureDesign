@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="308.0" prefWidth="338.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginFrameController">
+   <children>
+      <TextField fx:id="idtextfield" layoutX="112.0" layoutY="150.0" />
+      <PasswordField fx:id="pwfield" layoutX="112.0" layoutY="189.0" />
+      <Label fx:id="id_text" layoutX="60.0" layoutY="153.0" text="ID" />
+      <Label fx:id="pw_text" layoutX="60.0" layoutY="192.0" text="Password" />
+      <Text fx:id="Login" layoutX="60.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" wrappingWidth="80.79248046875">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <Button fx:id="loginbutton" layoutX="112.0" layoutY="227.0" mnemonicParsing="false" onAction="#OnLogin" prefHeight="22.0" prefWidth="62.0" text="login" />
+      <Button fx:id="creatbutton" layoutX="184.0" layoutY="227.0" mnemonicParsing="false" onAction="#OnCreatAccount" prefHeight="22.0" prefWidth="89.0" text="creat account" />
+   </children>
+</AnchorPane>

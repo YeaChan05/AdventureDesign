@@ -64,31 +64,31 @@ public class Character{
 
 
     //데이터 호출
-    public float getHealth(){
+    public float isHealth(){
         return this.health;
     }
 
-    public float getActiveness(){
+    public float isActiveness(){
         return this.activeness;
     }
 
-    public float getInterest(){
+    public float isInterest(){
         return this.interest;
     }
 
-    public float getMoney(){
+    public float isMoney(){
         return this.money;
     }
     
-    public float getIntelligence(){
+    public float isIntelligence(){
         return this.intelligence;
     }
 
-    public boolean getElectionFlag(){
+    public boolean isElectionFlag(){
         return this.electionFlag;
     }
 
-    public int getlectureCount(){
+    public int islectureCount(){
         return this.lectureCount;
     }
 

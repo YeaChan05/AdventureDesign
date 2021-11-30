@@ -1,13 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Random;
-import java.io.BufferedOutputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.io.OutputStream;
-import java.io.File;
-
+import javafx.application.Application;
 
 public class Main{
 	
@@ -19,15 +13,9 @@ public class Main{
 	}
     
     public static void main(String[] args) throws Exception{
-    	DataStorage ds = new DataStorage();
-    	ds.openAccountFile("id","passwos");
-    	
-    	// 1. { [게임 시작 -> 회원가입 -> 로그인] -> [캐릭터 생성 -> 캐릭터 선택 -> (게임 종료)] -> [게임중 -> 게임 종료] }
-        // 2. { [게임 시작 -> 회원가입 -> 로그인] -> [캐릭터 선택 -> (게임 종료)] -> [게임중 -> 게임 종료] }
-        // 3. { [게임 시작 -> 회원가입 -> 로그인] -> [캐릭터 삭제] -> [게임 종료] }
-        // 4. { [게임 시작 -> 로그인] -> [캐릭터 생성 -> 캐릭터 선택 -> (게임 종료)] -> [게임중 -> 게임 종료] }
-        // 5. { [게임 시작 -> 로그인]-> [캐릭터 선택 -> (게임 종료)] -> [게임중 -> 게임 종료] }
+        IntroFrameController.Launch();
         
+
     	// 프로그램 전체 구조
     	
     	Game app = new Game();
@@ -69,7 +57,7 @@ public class Main{
            
     }
     
-   
+  
     
-    
+
 }   

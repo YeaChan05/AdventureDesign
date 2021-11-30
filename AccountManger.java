@@ -26,7 +26,7 @@ public class AccountManger {
 		}
 		else {
 			for(Account account: accounts) {
-				if(account.getId().equals(id)) {
+				if(account.isId().equals(id)) {
 	                return account;
 	            }
 			}
@@ -62,7 +62,7 @@ public class AccountManger {
 	// 중복 id가 있는지 찾아냄 
 	public boolean isDuplicatedAccount(String id) {
 		for(Account account : accounts) {
-			if(account.getId().equals(id)) {
+			if(account.isId().equals(id)) {
 				return true;
 			}
 		}

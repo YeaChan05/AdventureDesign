@@ -50,8 +50,8 @@ public class Game {
 	    		if(currentAccount == null) {
 	    			System.out.println("등록되지 않은 사용자입니다.");
 	    		} else {
-	    			if(currentAccount.getPw().equals(password)) {
-		    			System.out.println(currentAccount.getId() + "님께서 로그인 하셨습니다.");
+	    			if(currentAccount.isPw().equals(password)) {
+		    			System.out.println(currentAccount.isId() + "님께서 로그인 하셨습니다.");
 		                System.out.println("공대생 키우기 게임을 시작합니다.");
 		    		} else {
 		    			 System.out.println("비밀번호가 틀렸습니다.");
@@ -98,7 +98,7 @@ public class Game {
     		if(currentAccount == null) {
     			// 등록된 아이디가 없다. 
     		} else {
-    			if(currentAccount.getPw().equals(pw_text)) {
+    			if(currentAccount.isPw().equals(pw_text)) {
 	    			// 로그인 성공  
 	    		} else {
 	    			// 비밀번호 틀림 
