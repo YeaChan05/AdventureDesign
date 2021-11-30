@@ -41,9 +41,6 @@ public class IntroFrameController extends Application implements EventHandler<Ac
     private AnchorPane anchorpane;
 
     @FXML
-    private Text gamename;
-
-    @FXML
     private ImageView introimage;
 
     @FXML
@@ -52,10 +49,8 @@ public class IntroFrameController extends Application implements EventHandler<Ac
     @FXML
     void initialize() {
         assert anchorpane != null : "fx:id=\"anchorpane\" was not injected: check your FXML file 'IntroFrame.fxml'.";
-        assert gamename != null : "fx:id=\"gamename\" was not injected: check your FXML file 'IntroFrame.fxml'.";
         assert introimage != null : "fx:id=\"introimage\" was not injected: check your FXML file 'IntroFrame.fxml'.";
         assert loginbutton != null : "fx:id=\"loginbtn\" was not injected: check your FXML file 'IntroFrame.fxml'.";
-
     }
     @FXML
     public void Login() throws IOException{
