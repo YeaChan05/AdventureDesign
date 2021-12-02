@@ -1,15 +1,26 @@
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 public class UniversityFrameController {
-
+	private Stage window;
+    private Stage primeStage=new Stage();
+    
     @FXML
     private ResourceBundle resources;
 
@@ -83,6 +94,12 @@ public class UniversityFrameController {
         assert studyButton != null : "fx:id=\"studyButton\" was not injected: check your FXML file 'UniversityFrame.fxml'.";
         assert universityTextField != null : "fx:id=\"universityTextField\" was not injected: check your FXML file 'UniversityFrame.fxml'.";
 
+    }
+    
+    
+    
+    public static void Launch() {
+        Launch();
     }
 
 }
