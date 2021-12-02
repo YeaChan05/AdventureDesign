@@ -1,7 +1,4 @@
 import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.Random;
-import javafx.application.Application;
 
 public class Main{
 	
@@ -52,10 +49,8 @@ public class Main{
         모든 이벤트 실행 시 시간 소모
         */
         
-        Character character =new Character("C://Programming//EngineerMaker//resources//gamedata//testdata.csv");
+        GameData gd =new GameData("./resources/gamedata/testdata.csv");
+        //gd.writeCSV();
+        gd.readCSV();
     }
-    
-  
-    
-
 }   

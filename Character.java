@@ -1,9 +1,3 @@
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import com.opencsv.CSVReader;
-import com.opencsv.exceptions.CsvValidationException;
-
 public class Character{
     private float health=0;
     private float activeness=0;
@@ -13,13 +7,7 @@ public class Character{
     private int[][] grade=new int[2][8];;
     private int lectureCount=0;
     private boolean electionFlag=false;
-    private File file;
-    public Character(String filepath) throws CsvValidationException, IOException{	
-        CSVReader csvReader = new CSVReader(new FileReader(filepath));
-        String[] nextLine;
-        while ((nextLine = csvReader.readNext()) != null) {
-            System.out.println(nextLine.length + " : " + String.join("|", nextLine));
-        }
+    public Character() {	
     }
 
     public float CalculateGrade(int TakeLecture,int Homework,int Study, int[] Exam){//매개변수들은 100점 만점 기준으로 받아야지 계산하기 편함
