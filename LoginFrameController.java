@@ -1,10 +1,6 @@
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import javax.swing.text.View;
-
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -65,7 +62,6 @@ public class LoginFrameController {
             System.out.println("login failed!");
         }
     }
-    
 
     @FXML
     void OnCreatAccount(ActionEvent event) throws IOException {
@@ -73,6 +69,7 @@ public class LoginFrameController {
         window.initModality(Modality.APPLICATION_MODAL);
         Parent root=FXMLLoader.load(getClass().getResource("CreatAccountFrame.fxml"));
         Scene scene = new Scene(root, 300, 275);
+        window.getIcons().add(new Image("file:resources/user.png"));
         window.setScene(scene);
         window.show();
     }
