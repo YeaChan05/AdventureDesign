@@ -14,8 +14,8 @@ public class Main{
     
     public static void main(String[] args) throws Exception{
     	//UniversityFrameController.Launch();
-        //IntroFrameController.Launch();
         
+    	IntroFrameController.Launch();
 
     	// 프로그램 전체 구조
     	

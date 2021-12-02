@@ -2,7 +2,6 @@
 
 <?import javafx.scene.Scene?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
@@ -22,45 +21,47 @@
                      <Font size="30.0" />
                   </font>
                </TextField>
-               <Button fx:id="studyButton" layoutX="244.0" layoutY="91.0" mnemonicParsing="false" onAction="#studyEvent" prefHeight="54.0" prefWidth="94.0" text="공부 ">
+               <Button fx:id="studyButton" layoutX="244.0" layoutY="91.0" mnemonicParsing="false" onAction="#OnstudyButton" prefHeight="54.0" prefWidth="94.0" text="공부 ">
                   <font>
                      <Font size="20.0" />
                   </font>
                </Button>
-               <Button fx:id="clubactivitiesButton" layoutX="405.0" layoutY="91.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="89.0" text="동아리">
+               <Button fx:id="clubactivitiesButton" layoutX="405.0" layoutY="91.0" mnemonicParsing="false" onAction="#OnclubactivitiesButton" prefHeight="53.0" prefWidth="89.0" text="동아리">
                   <font>
                      <Font size="20.0" />
                   </font>
                </Button>
-               <ImageView fx:id="returnIamgeView" fitHeight="58.0" fitWidth="70.0" layoutX="528.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@../../OneDrive/바탕%20화면/return.png" />
-                  </image>
-               </ImageView>
                <ListView fx:id="lecutreListView" layoutX="57.0" layoutY="164.0" prefHeight="211.0" prefWidth="85.0" />
-               <Button fx:id="majorlecture1Button" layoutX="57.0" layoutY="164.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="83.0" text="전공1" />
+               <Button fx:id="majorlecture1Button" layoutX="57.0" layoutY="164.0" mnemonicParsing="false" onAction="#Onmajorlecture1Button" prefHeight="35.0" prefWidth="83.0" text="전공1" />
                <Label fx:id="lecutreLabel" alignment="CENTER" layoutX="60.0" layoutY="91.0" prefHeight="55.0" prefWidth="78.0" style="-fx-border-color: black;" text="강의">
                   <font>
                      <Font size="20.0" />
                   </font>
                </Label>
-               <Button fx:id="majorlecture2Button" layoutX="57.0" layoutY="199.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="83.0" text="전공 2" />
-               <Button fx:id="majorlecture3Button" layoutX="58.0" layoutY="234.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="82.0" text="전공 3" />
-               <Button fx:id="majorlecture4Button" layoutX="57.0" layoutY="270.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="83.0" text="전공 4" />
-               <Button fx:id="culturelecture1Button" layoutX="57.0" layoutY="307.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="84.0" text="교양 1" />
-               <Button fx:id="culturelecture2Button" layoutX="57.0" layoutY="340.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="84.0" text="교양 2" />
-               <Button fx:id="hiddeneventButton" layoutX="250.0" layoutY="223.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="128.0" text="히든이벤트">
+               <Button fx:id="majorlecture2Button" layoutX="57.0" layoutY="199.0" mnemonicParsing="false" onAction="#Onmajorlecture2Button" prefHeight="35.0" prefWidth="83.0" text="전공 2" />
+               <Button fx:id="majorlecture3Button" layoutX="58.0" layoutY="234.0" mnemonicParsing="false" onAction="#Onmajorlecture3Button" prefHeight="36.0" prefWidth="82.0" text="전공 3" />
+               <Button fx:id="majorlecture4Button" layoutX="57.0" layoutY="270.0" mnemonicParsing="false" onAction="#Onmajorlecture4Button" prefHeight="37.0" prefWidth="83.0" text="전공 4" />
+               <Button fx:id="culturelecture1Button" layoutX="57.0" layoutY="307.0" mnemonicParsing="false" onAction="#Onculturelecture1Button" prefHeight="33.0" prefWidth="84.0" text="교양 1" />
+               <Button fx:id="culturelecture2Button" layoutX="57.0" layoutY="340.0" mnemonicParsing="false" onAction="#Onculturelecture2Button" prefHeight="34.0" prefWidth="84.0" text="교양 2" />
+               <Button fx:id="hiddeneventButton" disable="true" layoutX="250.0" layoutY="223.0" mnemonicParsing="false" onAction="#OnhiddeneventButton" prefHeight="58.0" prefWidth="128.0" text="히든이벤트">
                   <font>
                      <Font size="20.0" />
                   </font>
                </Button>
-               <Button fx:id="specialButton" layoutX="406.0" layoutY="223.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="126.0" text="특수이벤트">
+               <Button fx:id="specialeventButton" disable="true" layoutX="406.0" layoutY="223.0" mnemonicParsing="false" onAction="#OnspecialeventButton" prefHeight="59.0" prefWidth="126.0" text="특수이벤트">
                   <font>
                      <Font size="20.0" />
                   </font>
                </Button>
-               <CheckBox fx:id="hiddeneventCheckBox" layoutX="261.0" layoutY="289.0" mnemonicParsing="false" text=" On/ Off" />
-               <CheckBox fx:id="specialeventCheckBox" layoutX="413.0" layoutY="289.0" mnemonicParsing="false" text="On/ Off" />
+               <Button fx:id="returnButton" layoutX="516.0" layoutY="14.0" mnemonicParsing="false" onAction="#OnreturnButton" prefHeight="56.0" prefWidth="63.0">
+                  <graphic>
+                     <ImageView fx:id="returnIamgeView" fitHeight="58.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../../OneDrive/바탕%20화면/return.png" />
+                        </image>
+                     </ImageView>
+                  </graphic>
+               </Button>
             </children></AnchorPane>
         </Scene>
     </scene>

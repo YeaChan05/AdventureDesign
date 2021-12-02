@@ -16,6 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -27,8 +28,7 @@ import javafx.stage.Stage;
 
 public class IntroFrameController extends Application implements EventHandler<ActionEvent>{
     private Stage window;
-    private Stage primeStage=new Stage();
-    private Account account= new Account();
+   
     LoginFrameController con;
    
     @FXML
@@ -62,6 +62,7 @@ public class IntroFrameController extends Application implements EventHandler<Ac
         con=loader.getController();
         con.setCon(this);
         Scene scene = new Scene(parent, 300, 275);
+        window.getIcons().add(new Image("file:resources/user.png"));
         window.setScene(scene);
         window.show();
     }
@@ -69,8 +70,9 @@ public class IntroFrameController extends Application implements EventHandler<Ac
     @Override
     public void start(Stage stage) throws IOException {
         Parent root =FXMLLoader.load(getClass().getResource("IntroFrame.fxml"));
-        primeStage.setScene(new Scene(root));
-        primeStage.show();
+        stage.getIcons().add(new Image("file:resources/user.png"));
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 
     @Override
@@ -92,7 +94,8 @@ public class IntroFrameController extends Application implements EventHandler<Ac
 		Platform.runLater(() -> {
             stage.close();
             try {
-                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("test.fxml"))));
+                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("GameFrame.fxml"))));
+                stage.getIcons().add(new Image("file:resources/user.png"));
                 stage.show();
             } catch (IOException e) {
                 // TODO Auto-generated catch block
