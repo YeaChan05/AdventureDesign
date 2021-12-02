@@ -11,9 +11,7 @@ import java.util.List;
 public class Account {
 	private String id; // 아이디 
 	private String pw; // 패스워드 
-
 	private String currentUser="";
-
 	private int jewel =0; // 환생하면 얻을수 있는 재화 
 	private Character lastUsedCharacter;
 	private List<Character> list = new ArrayList<>();
@@ -39,7 +37,7 @@ public class Account {
 	}
 
 
-	public String iscurrentUser() {
+	public String getcurrentUser() {
 		return this.currentUser;
 	}
 
@@ -64,6 +62,7 @@ public class Account {
 		String account = id + "/" + password;
 		while((str =bufReader.readLine()) != null) {//한줄을 읽었을때 비어있지 않으면 반복문 실행
 			if (str.equals(account)) {//계정을 파일에서 찾으면
+				this.currentUser=account;
 				return true;
 			} 
 		}

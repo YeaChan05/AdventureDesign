@@ -35,6 +35,9 @@ public class GameFrameController {
     private Button downtownButton;
 
     @FXML
+    private ImageView downtownImageView;
+
+    @FXML
     private Label healthLabel;
 
     @FXML
@@ -100,7 +103,7 @@ public class GameFrameController {
         Stage window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
         Parent root=FXMLLoader.load(getClass().getResource("CreatAccountFrame.fxml"));
-        Scene scene = new Scene(root, 300, 275);
+        Scene scene = new Scene(root);
         window.setScene(scene);
         window.show();
     }
@@ -111,6 +114,7 @@ public class GameFrameController {
         assert activenessProgressBar != null : "fx:id=\"activenessProgressBar\" was not injected: check your FXML file 'GameFrame.fxml'.";
         assert activenessText != null : "fx:id=\"activenessText\" was not injected: check your FXML file 'GameFrame.fxml'.";
         assert downtownButton != null : "fx:id=\"downtownButton\" was not injected: check your FXML file 'GameFrame.fxml'.";
+        assert downtownImageView != null : "fx:id=\"downtownImageView\" was not injected: check your FXML file 'GameFrame.fxml'.";
         assert healthLabel != null : "fx:id=\"healthLabel\" was not injected: check your FXML file 'GameFrame.fxml'.";
         assert healthProgressBar != null : "fx:id=\"healthProgressBar\" was not injected: check your FXML file 'GameFrame.fxml'.";
         assert healthText != null : "fx:id=\"healthText\" was not injected: check your FXML file 'GameFrame.fxml'.";
@@ -130,7 +134,5 @@ public class GameFrameController {
         assert userImageView != null : "fx:id=\"userImageView\" was not injected: check your FXML file 'GameFrame.fxml'.";
 
     }
-    public void AdjactivenessText(){
-        //activenessText.setText(activenessProgressBar);
-    }
+
 }

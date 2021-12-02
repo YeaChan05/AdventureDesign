@@ -13,7 +13,7 @@ public class Main{
 	}
     
     public static void main(String[] args) throws Exception{
-        IntroFrameController.Launch();
+        //IntroFrameController.Launch();
         
 
     	// // 프로그램 전체 구조
@@ -51,8 +51,8 @@ public class Main{
         }
         모든 이벤트 실행 시 시간 소모
         */
-        IntroFrameController.Launch();
-           
+        
+        Character character =new Character("C://Programming//EngineerMaker//resources//gamedata//testdata.csv");
     }
     
   
