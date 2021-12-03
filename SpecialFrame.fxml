@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SpecialEventFrameController">
+   <children>
+      <Button fx:id="festivalButton" layoutX="105.0" layoutY="99.0" mnemonicParsing="false" onAction="#OnfestivalButton" prefHeight="77.0" prefWidth="128.0" text="축제" />
+      <Button fx:id="membershiptranningButton" layoutX="257.0" layoutY="99.0" mnemonicParsing="false" onAction="#OnmembershiptranningButton" prefHeight="77.0" prefWidth="128.0" text="M.T" />
+      <Button fx:id="councilelectionButton" layoutX="105.0" layoutY="200.0" mnemonicParsing="false" onAction="#OncouncilelectionButton" prefHeight="77.0" prefWidth="128.0" text="학생 선거" />
+      <Button fx:id="examButton" layoutX="257.0" layoutY="200.0" mnemonicParsing="false" onAction="#OnexamButton" prefHeight="77.0" prefWidth="128.0" text="시험" />
+      <Button fx:id="contestButton" layoutX="450.0" layoutY="148.0" mnemonicParsing="false" onAction="#OnfestivalButton" prefHeight="68.0" prefWidth="114.0" text="공모전 참가" />
+      <Text layoutX="157.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="스페셜 이벤트 " textAlignment="CENTER" wrappingWidth="189.109375">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

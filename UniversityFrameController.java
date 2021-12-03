@@ -75,44 +75,44 @@ public class UniversityFrameController {
     private TextField universityTextField;
 
     @FXML
-    public void OnstudyButton(ActionEvent event) throws Exception {
+    void OnstudyButton(ActionEvent event) throws Exception {
     	System.out.println("공부하기 버튼 클릭");
     }
    
     @FXML
-    public void OnclubactivitiesButton(ActionEvent event) throws Exception {
+    void OnclubactivitiesButton(ActionEvent event) throws Exception {
     	System.out.println("동아리 버튼 클릭");
     }
     
     @FXML 
-    public void Onmajorlecture1Button(ActionEvent event) throws Exception {
+    void Onmajorlecture1Button(ActionEvent event) throws Exception {
     	System.out.println("전공1 버튼 클릭");
     }
     
     @FXML 
-    public void  Onmajorlecture2Button(ActionEvent event) throws Exception {
+    void  Onmajorlecture2Button(ActionEvent event) throws Exception {
     	System.out.println("전공2 버튼 클릭");
     }
     
     
     @FXML 
-    public void  Onmajorlecture3Button(ActionEvent event) throws Exception {
+    void  Onmajorlecture3Button(ActionEvent event) throws Exception {
     	System.out.println("전공3 버튼 클릭");
     }
     
     
     @FXML 
-    public void  Onmajorlecture4Button(ActionEvent event) throws Exception {
+    void  Onmajorlecture4Button(ActionEvent event) throws Exception {
     	System.out.println("전공4 버튼 클릭");
     }
     
     @FXML 
-    public void Onculturelecture1Button(ActionEvent event) throws Exception {
+    void Onculturelecture1Button(ActionEvent event) throws Exception {
     	System.out.println("교양1 버튼 클릭");
     }
     
     @FXML 
-    public void Onculturelecture2Button(ActionEvent event) throws Exception {
+    void Onculturelecture2Button(ActionEvent event) throws Exception {
     	System.out.println("교양2 버튼 클릭");
     }
     
@@ -127,7 +127,7 @@ public class UniversityFrameController {
     		hiddeneventButton.setDisable(false); // 버튼 활성화 
 	    	Stage window = new Stage();
 	        window.initModality(Modality.APPLICATION_MODAL);
-	        Parent root=FXMLLoader.load(getClass().getResource("HiddenFrame.fxml"));
+	        Parent root=FXMLLoader.load(getClass().getResource("HiddenEventFrame.fxml"));
 	        Scene scene = new Scene(root, 400, 400);
 	        window.setScene(scene);
 	        window.show();
@@ -143,7 +143,7 @@ public class UniversityFrameController {
     		specialeventButton.setDisable(false); // 버튼 활성화 
     		Stage window = new Stage();
 	        window.initModality(Modality.APPLICATION_MODAL);
-	        Parent root=FXMLLoader.load(getClass().getResource("SpecialFrame.fxml"));
+	        Parent root=FXMLLoader.load(getClass().getResource("SpecialEventFrame.fxml"));
 	        Scene scene = new Scene(root, 400, 400);
 	        window.setScene(scene);
 	        window.show();
@@ -151,7 +151,7 @@ public class UniversityFrameController {
     }
     
     @FXML 
-    public void OnreturnButton(ActionEvent event) throws Exception {
+    void OnreturnButton(ActionEvent event) throws Exception {
     	System.out.println("돌아가기 버튼 클릭");
     	// University 윈도우 끄고 game윈도우만 띄우기 
     	
