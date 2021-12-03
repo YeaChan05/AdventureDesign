@@ -4,7 +4,7 @@ public class Character{
     private float interest=0;
     private float money=0;
     private float intelligence=0;
-    private int[][] grade=new int[2][8];;
+    private int[][] period=new int[2][8];;
     private int lectureCount=0;
     private boolean electionFlag=false;
     public Character() {	
@@ -51,6 +51,15 @@ public class Character{
     public void setlectureCount(int lectureCount){
         this.lectureCount=lectureCount;
     }
+
+    public void setPeriod(int[][] period){
+        this.period=period;
+    }
+
+
+
+
+    
     //데이터 호출
     public float getHealth(){
         return this.health;
@@ -78,6 +87,10 @@ public class Character{
 
     public int getlectureCount(){
         return this.lectureCount;
+    }
+
+    public int[][] getPeriod(){
+        return this.period;
     }
 
 
