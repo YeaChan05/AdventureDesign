@@ -16,6 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -27,8 +28,7 @@ import javafx.stage.Stage;
 
 public class IntroFrameController extends Application implements EventHandler<ActionEvent>{
     private Stage window;
-    private Stage primeStage=new Stage();
-    private Account account= new Account();
+    private String account_string;
     LoginFrameController con;
    
     @FXML
@@ -41,9 +41,6 @@ public class IntroFrameController extends Application implements EventHandler<Ac
     private AnchorPane anchorpane;
 
     @FXML
-    private Text gamename;
-
-    @FXML
     private ImageView introimage;
 
     @FXML
@@ -52,17 +49,20 @@ public class IntroFrameController extends Application implements EventHandler<Ac
     @FXML
     void initialize() {
         assert anchorpane != null : "fx:id=\"anchorpane\" was not injected: check your FXML file 'IntroFrame.fxml'.";
-        assert gamename != null : "fx:id=\"gamename\" was not injected: check your FXML file 'IntroFrame.fxml'.";
         assert introimage != null : "fx:id=\"introimage\" was not injected: check your FXML file 'IntroFrame.fxml'.";
         assert loginbutton != null : "fx:id=\"loginbtn\" was not injected: check your FXML file 'IntroFrame.fxml'.";
-
     }
     @FXML
     public void Login() throws IOException{
         Stage window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
-        Parent root=FXMLLoader.load(getClass().getResource("LoginFrame.fxml"));
-        Scene scene = new Scene(root, 300, 275);
+        //Parent root=FXMLLoader.load(getClass().getResource("LoginFrame.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginFrame.fxml"));
+        Parent parent = loader.load();
+        con=loader.getController();
+        con.setCon(this);
+        Scene scene = new Scene(parent, 300, 275);
+        window.getIcons().add(new Image("file:resources/user.png"));
         window.setScene(scene);
         window.show();
     }
@@ -70,12 +70,9 @@ public class IntroFrameController extends Application implements EventHandler<Ac
     @Override
     public void start(Stage stage) throws IOException {
         Parent root =FXMLLoader.load(getClass().getResource("IntroFrame.fxml"));
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginFrame.fxml"));
-        Object parent = loader.load();
-        con=loader.getController();
-        con.setCon(this);
-        primeStage.setScene(new Scene(root));
-        primeStage.show();
+        stage.getIcons().add(new Image("file:resources/user.png"));
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 
     @Override
@@ -86,17 +83,26 @@ public class IntroFrameController extends Application implements EventHandler<Ac
 
     @Override
     public void stop() throws Exception {
-        // TODO Auto-generated method stub
+        ////////////////////////////////////////write부분
         super.stop();
     }
     public static void Launch() {
         launch();
     }
     public void closeStage() {
-		Stage stage = (Stage) anchorpane.getScene().getWindow();
+		Stage stage = (Stage)anchorpane.getScene().getWindow();
 		Platform.runLater(() -> {
-			stage.close();
+            stage.close();
+            try {
+                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("GameFrame.fxml"))));
+                stage.getIcons().add(new Image("file:resources/user.png"));
+                stage.show();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
 		});
 	}
+
     
 }

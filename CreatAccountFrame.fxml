@@ -10,11 +10,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="308.0" prefWidth="338.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CreatAccountFrameController">
    <children>
-      <TextField fx:id="idtextfield" layoutX="112.0" layoutY="150.0" />
+      <TextField fx:id="idfield" layoutX="112.0" layoutY="150.0" />
       <PasswordField fx:id="pwfield" layoutX="112.0" layoutY="189.0" />
       <Label fx:id="id_text" layoutX="60.0" layoutY="153.0" text="ID" />
       <Label fx:id="pw_text" layoutX="60.0" layoutY="192.0" text="Password" />
-      <Text fx:id="crreatccount" layoutX="60.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Creat Account" wrappingWidth="161.0">
+      <Text fx:id="creataccount" layoutX="60.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Creat Account" wrappingWidth="161.0">
          <font>
             <Font size="23.0" />
          </font>

@@ -3,17 +3,11 @@ public class Character{
     private float activeness=0;
     private float interest=0;
     private float money=0;
-    private String name="";
     private float intelligence=0;
-    private boolean gender=true;
-    private int[][] grade=new int[2][8];;
+    private int[][] period=new int[2][8];;
     private int lectureCount=0;
     private boolean electionFlag=false;
-
-    public Character(String Name, boolean Gender){
-        this.name=Name;
-        this.gender=Gender;
-        System.out.println("Character 생성자 작동");
+    public Character() {	
     }
 
     public float CalculateGrade(int TakeLecture,int Homework,int Study, int[] Exam){//매개변수들은 100점 만점 기준으로 받아야지 계산하기 편함
@@ -26,7 +20,6 @@ public class Character{
         }
         else
             Result=-1;//F학점
-
         return Result;
     }
 
@@ -59,37 +52,45 @@ public class Character{
         this.lectureCount=lectureCount;
     }
 
+    public void setPeriod(int[][] period){
+        this.period=period;
+    }
 
 
 
 
+    
     //데이터 호출
-    public float isHealth(){
+    public float getHealth(){
         return this.health;
     }
 
-    public float isActiveness(){
+    public float getActiveness(){
         return this.activeness;
     }
 
-    public float isInterest(){
+    public float getInterest(){
         return this.interest;
     }
 
-    public float isMoney(){
+    public float getMoney(){
         return this.money;
     }
     
-    public float isIntelligence(){
+    public float getIntelligence(){
         return this.intelligence;
     }
 
-    public boolean isElectionFlag(){
+    public boolean getElectionFlag(){
         return this.electionFlag;
     }
 
-    public int islectureCount(){
+    public int getlectureCount(){
         return this.lectureCount;
+    }
+
+    public int[][] getPeriod(){
+        return this.period;
     }
 
 

@@ -55,7 +55,7 @@ public class SpecialEvent {
     }
 
     public void Exam(){//매개변수를 getIntelligence로 받아옴
-        float intel=this.character.isIntelligence();
+        float intel=this.character.getIntelligence();
 
     }
 

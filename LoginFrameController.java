@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -20,6 +21,7 @@ public class LoginFrameController {
     private Stage loginStage=new Stage();
     private String account_string="";
     private IntroFrameController con;
+    private GameData gameData; 
     @FXML
     private ResourceBundle resources;
     
@@ -48,20 +50,21 @@ public class LoginFrameController {
     private PasswordField pwfield;
 
     @FXML
-    public void OnLogin(ActionEvent event) throws IOException {
+    public void OnLogin(ActionEvent event) throws Exception {
         if(account.checkAccountFile(idtextfield.getText(),pwfield.getText())){
             System.out.println("login succes!");
             Node node =(Node)event.getSource();
             loginStage=(Stage)node.getScene().getWindow();
-            account_string=idtextfield.getText()+"/"+pwfield.getText();
+            this.account_string=idtextfield.getText()+"#"+pwfield.getText();
             loginStage.close();
-            //con.stop();
+            con.closeStage();
+            this.gameData=new GameData("./resources/gamedata/"+this.getaccount_string()+".csv");
+            gameData.readfile();
         }
         else{
             System.out.println("login failed!");
         }
     }
-    
 
     @FXML
     void OnCreatAccount(ActionEvent event) throws IOException {
@@ -69,6 +72,7 @@ public class LoginFrameController {
         window.initModality(Modality.APPLICATION_MODAL);
         Parent root=FXMLLoader.load(getClass().getResource("CreatAccountFrame.fxml"));
         Scene scene = new Scene(root, 300, 275);
+        window.getIcons().add(new Image("file:resources/user.png"));
         window.setScene(scene);
         window.show();
     }
@@ -85,7 +89,7 @@ public class LoginFrameController {
 
     }
 
-    public String isaccount_string(){
+    public String getaccount_string(){
         return this.account_string;
     }
 
@@ -95,5 +99,9 @@ public class LoginFrameController {
 
     public void setCon(IntroFrameController con) {
         this.con = con;
+    }
+
+    public void setGameData(GameData gameData) {
+        this.gameData = gameData;
     }
 }

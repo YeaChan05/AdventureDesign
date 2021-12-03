@@ -19,19 +19,28 @@ public class Account {
 	private File file = new File("C:\\Programming\\EngineerMaker\\resources\\account.txt");	
 	Scanner in = new Scanner(System.in);
 	 
+
+	public Account(String id, String pw) {
+		this.id = id;
+		this.pw = pw;
+	}
+	
 	public Account() {}
 
-	public String isId() {
+	public String getId() {
+
 		return this.id;
 	}
 	
-	public String isPw() {
+	public String getPw() {
 		return this.pw;
 	}
 
-	public String iscurrentUser() {
+
+	public String getcurrentUser() {
 		return this.currentUser;
 	}
+
 	
 	public void setId(String id) {
 		this.id = id;
@@ -50,9 +59,10 @@ public class Account {
 		FileReader filereader = new FileReader(file);
 		BufferedReader bufReader = new BufferedReader(filereader);	
 		String str;
-		String account = id + "/" + password;
+		String account = id + "#" + password;
 		while((str =bufReader.readLine()) != null) {//한줄을 읽었을때 비어있지 않으면 반복문 실행
 			if (str.equals(account)) {//계정을 파일에서 찾으면
+				this.currentUser=account;
 				return true;
 			} 
 		}
@@ -62,7 +72,7 @@ public class Account {
 
 	//txt파일에 접근하여 추가할 계정 정보를 추가할
 	public void creatAccount(String id, String password) throws IOException {
-		String newAccount =id + "/" + password+"\n";
+		String newAccount =id + "#" + password+"\n";
 		BufferedWriter writer = new BufferedWriter(new FileWriter(file,true));
 		writer.append(newAccount);
     	writer.close();
