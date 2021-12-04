@@ -8,27 +8,19 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class IntroFrameController extends Application implements EventHandler<ActionEvent>{
     private Stage window;
     private String account_string;
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginFrame.fxml"));
     LoginFrameController con;
    
     @FXML
@@ -57,7 +49,7 @@ public class IntroFrameController extends Application implements EventHandler<Ac
         Stage window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
         //Parent root=FXMLLoader.load(getClass().getResource("LoginFrame.fxml"));
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginFrame.fxml"));
+        
         Parent parent = loader.load();
         con=loader.getController();
         con.setCon(this);
@@ -65,6 +57,9 @@ public class IntroFrameController extends Application implements EventHandler<Ac
         window.getIcons().add(new Image("file:resources/user.png"));
         window.setScene(scene);
         window.show();
+        window.setOnCloseRequest(e->{
+            this.account_string=con.getaccount_string();
+        });
     }
 
     @Override
@@ -83,7 +78,6 @@ public class IntroFrameController extends Application implements EventHandler<Ac
 
     @Override
     public void stop() throws Exception {
-        ////////////////////////////////////////write부분
         super.stop();
     }
     public static void Launch() {
@@ -103,6 +97,4 @@ public class IntroFrameController extends Application implements EventHandler<Ac
             }
 		});
 	}
-
-    
 }
