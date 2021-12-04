@@ -15,7 +15,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class GameFrameController {
-
+    private IntroFrameController introFrameController;
     @FXML
     private ResourceBundle resources;
 
@@ -90,19 +90,19 @@ public class GameFrameController {
 
     @FXML
     void OndowntownButton(ActionEvent event) throws IOException {
-        Stage window = new Stage();
-        window.initModality(Modality.APPLICATION_MODAL);
-        Parent root=FXMLLoader.load(getClass().getResource("CreatAccountFrame.fxml"));
-        Scene scene = new Scene(root);
-        window.setScene(scene);
-        window.show();
+        // Stage window = new Stage();
+        // window.initModality(Modality.APPLICATION_MODAL);
+        // Parent root=FXMLLoader.load(getClass().getResource("CreatAccountFrame.fxml"));
+        // Scene scene = new Scene(root);
+        // window.setScene(scene);
+        // window.show();
     }
 
     @FXML
     void OnuniversityButton(ActionEvent event) throws IOException {
         Stage window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
-        Parent root=FXMLLoader.load(getClass().getResource("CreatAccountFrame.fxml"));
+        Parent root=FXMLLoader.load(getClass().getResource("UniversityFrame.fxml"));
         Scene scene = new Scene(root);
         window.setScene(scene);
         window.show();
@@ -132,6 +132,10 @@ public class GameFrameController {
         assert universityButton != null : "fx:id=\"universityButton\" was not injected: check your FXML file 'GameFrame.fxml'.";
         assert universityImageView != null : "fx:id=\"universityImageView\" was not injected: check your FXML file 'GameFrame.fxml'.";
         assert userImageView != null : "fx:id=\"userImageView\" was not injected: check your FXML file 'GameFrame.fxml'.";
+    }
+
+    public void setCon(IntroFrameController introFrameController) {
+        this.introFrameController=introFrameController;
     }
     
 }

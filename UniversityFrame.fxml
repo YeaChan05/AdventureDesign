@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorpane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UniversityFrameController">
+   <children>
+      <Button fx:id="studyButton" layoutX="450.0" layoutY="250.0" mnemonicParsing="false" onAction="#OnstudyButton" prefHeight="60.0" prefWidth="100.0" text="공부 ">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="clubactivitiesButton" layoutX="650.0" layoutY="250.0" mnemonicParsing="false" onAction="#OnclubactivitiesButton" prefHeight="60.0" prefWidth="100.0" text="동아리">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="majorlecture1Button" layoutX="100.0" layoutY="180.0" mnemonicParsing="false" onAction="#Onmajorlecture1Button" prefHeight="40.0" prefWidth="80.0" text="전공1" />
+      <Button fx:id="majorlecture2Button" layoutX="100.0" layoutY="220.0" mnemonicParsing="false" onAction="#Onmajorlecture2Button" prefHeight="40.0" prefWidth="80.0" text="전공 2" />
+      <Button fx:id="majorlecture3Button" layoutX="100.0" layoutY="260.0" mnemonicParsing="false" onAction="#Onmajorlecture3Button" prefHeight="40.0" prefWidth="80.0" text="전공 3" />
+      <Button fx:id="majorlecture4Button" layoutX="100.0" layoutY="300.0" mnemonicParsing="false" onAction="#Onmajorlecture4Button" prefHeight="40.0" prefWidth="80.0" text="전공 4" />
+      <Button fx:id="culturelecture1Button" layoutX="100.0" layoutY="340.0" mnemonicParsing="false" onAction="#Onculturelecture1Button" prefHeight="40.0" prefWidth="80.0" text="교양 1" />
+      <Button fx:id="culturelecture2Button" layoutX="100.0" layoutY="380.0" mnemonicParsing="false" onAction="#Onculturelecture2Button" prefHeight="40.0" prefWidth="80.0" text="교양 2" />
+      <Label fx:id="lecutreLabel" alignment="CENTER" layoutX="101.0" layoutY="78.0" prefHeight="55.0" prefWidth="80.0" style="-fx-border-color: black;" text="강의">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="universityLabel" alignment="CENTER" layoutX="300.0" layoutY="14.0" prefHeight="55.0" prefWidth="500.0" style="-fx-border-color: black;" text="학교">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="hiddeneventButton" disable="true" layoutX="639.0" layoutY="480.0" mnemonicParsing="false" onAction="#OnhiddeneventButton" prefHeight="60.0" prefWidth="130.0" text="히든이벤트">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="specialeventButton" disable="true" layoutX="795.0" layoutY="480.0" mnemonicParsing="false" onAction="#OnspecialeventButton" prefHeight="60.0" prefWidth="130.0" text="특수이벤트">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

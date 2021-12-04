@@ -11,7 +11,6 @@ public class Main{
 	}
     
     public static void main(String[] args) throws Exception{
-        LoginFrameController login= new LoginFrameController();
-        login.getCon().Launch();
+        IntroFrameController.Launch();
     }
 }   

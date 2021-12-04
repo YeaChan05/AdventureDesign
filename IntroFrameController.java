@@ -14,15 +14,13 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class IntroFrameController extends Application implements EventHandler<ActionEvent>{
     private Stage window;
-    private String account_string;
-    FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginFrame.fxml"));
-    LoginFrameController con;
-   
+    private  Character character=new Character();;
+    GameFrameController con;
+    
     @FXML
     private ResourceBundle resources;
 
@@ -36,30 +34,24 @@ public class IntroFrameController extends Application implements EventHandler<Ac
     private ImageView introimage;
 
     @FXML
-    private Button loginbutton;
+    private Button gamestartbutton;
     
     @FXML
     void initialize() {
         assert anchorpane != null : "fx:id=\"anchorpane\" was not injected: check your FXML file 'IntroFrame.fxml'.";
         assert introimage != null : "fx:id=\"introimage\" was not injected: check your FXML file 'IntroFrame.fxml'.";
-        assert loginbutton != null : "fx:id=\"loginbtn\" was not injected: check your FXML file 'IntroFrame.fxml'.";
+        assert gamestartbutton != null : "fx:id=\"gamestartbutton\" was not injected: check your FXML file 'IntroFrame.fxml'.";
     }
     @FXML
-    public void Login() throws IOException{
-        Stage window = new Stage();
-        window.initModality(Modality.APPLICATION_MODAL);
-        //Parent root=FXMLLoader.load(getClass().getResource("LoginFrame.fxml"));
-        
+    public void OnGameStart() throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("GameFrame.fxml"));
         Parent parent = loader.load();
         con=loader.getController();
         con.setCon(this);
-        Scene scene = new Scene(parent, 300, 275);
-        window.getIcons().add(new Image("file:resources/user.png"));
-        window.setScene(scene);
-        window.show();
-        window.setOnCloseRequest(e->{
-            this.account_string=con.getaccount_string();
-        });
+        closeStage();
+        GameData gd=new GameData("./resources/gamedata.txt");
+
+        this.character=gd.readfile();
     }
 
     @Override
@@ -78,6 +70,9 @@ public class IntroFrameController extends Application implements EventHandler<Ac
 
     @Override
     public void stop() throws Exception {
+        GameData gd=new GameData("./resources/gamedata.txt");
+       
+        gd.writefile(this.character);
         super.stop();
     }
     public static void Launch() {

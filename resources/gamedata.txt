@@ -1,0 +1,6 @@
+health,0.0
+activeness,0.0
+interest,0.0
+money,0
+intelligence,0.0
+lectureCount,0

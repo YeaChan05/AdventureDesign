@@ -2,9 +2,9 @@ public class Character{
     private float health=0;
     private float activeness=0;
     private float interest=0;
-    private float money=0;
+    private int money=0;
     private float intelligence=0;
-    private int[][] period=new int[2][8];;
+    private int[][] period=new int[2][8];
     private int lectureCount=0;
     private boolean electionFlag=false;
     public Character() {	
@@ -24,15 +24,15 @@ public class Character{
     }
 
   //데이터 조정
-    public void setHealth(int Health){
+    public void setHealth(float Health){
         this.health=Health;
     }
 
-    public void setActiveness(int Activeness){
+    public void setActiveness(float Activeness){
         this.activeness=Activeness;
     }
 
-    public void setInterest(int Interest){
+    public void setInterest(float Interest){
         this.interest=Interest;
     }
 
@@ -40,7 +40,7 @@ public class Character{
         this.money=Money;
     }
     
-    public void setIntelligence(int Intelligence){
+    public void setIntelligence(float Intelligence){
         this.intelligence=Intelligence;
     }
 
@@ -73,7 +73,7 @@ public class Character{
         return this.interest;
     }
 
-    public float getMoney(){
+    public int getMoney(){
         return this.money;
     }
     
