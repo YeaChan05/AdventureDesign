@@ -9,20 +9,17 @@ import java.util.StringTokenizer;
 import java.util.HashMap;
 public class GameData {
     private String filepath;
-    private HashMap<String, String> map;
     private Character character;
     private BufferedReader br;
     private BufferedWriter bw;
     public GameData(String filepath) throws IOException{
         this.filepath = filepath;
-        this.map = new HashMap<String, String>();
         this.character=new Character();
-        
-        
-    }
+        }
 
     public void writefile(Character character) throws IOException{
         bw= new BufferedWriter(new FileWriter(this.filepath));
+        
         bw.write("health,"+character.getHealth());
         bw.newLine();
 
@@ -54,8 +51,7 @@ public class GameData {
         br = new BufferedReader(new FileReader(this.filepath));
         System.out.println("readfile!!");
         Character character=new Character();
-        
-        
+    
         character.setHealth(Float.parseFloat((String)(Linetok(br.readLine()))));
 
         character.setActiveness(Float.parseFloat((String)(Linetok(br.readLine()))));
@@ -73,23 +69,6 @@ public class GameData {
         // character.setElectionFlag((Boolean)Linetok(br.readLine()));
         
         return character;
-        
-        // try {
-        //     String line;
-        //     while ((line = br.readLine()) != null) {
-        //         System.out.println(line);
-        //     }
-        // } catch (FileNotFoundException e) {
-        //     e.printStackTrace();
-        // } catch (IOException e) {
-        //     e.printStackTrace();
-        // }finally {
-        //     if(br != null) 
-        //         try {
-        //             br.close(); 
-        //         }
-        //         catch (IOException e){}
-        // }
     }
     public Object Linetok(String line){
         StringTokenizer st= new StringTokenizer(line,",");

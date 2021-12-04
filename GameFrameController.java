@@ -91,8 +91,7 @@ public class GameFrameController {
     @FXML
     void OndowntownButton(ActionEvent event) throws IOException {
         // Stage window = new Stage();
-        // window.initModality(Modality.APPLICATION_MODAL);
-        // Parent root=FXMLLoader.load(getClass().getResource("CreatAccountFrame.fxml"));
+        // Parent root=FXMLLoader.load(getClass().getResource("UniversityFrame.fxml"));
         // Scene scene = new Scene(root);
         // window.setScene(scene);
         // window.show();
@@ -101,7 +100,6 @@ public class GameFrameController {
     @FXML
     void OnuniversityButton(ActionEvent event) throws IOException {
         Stage window = new Stage();
-        window.initModality(Modality.APPLICATION_MODAL);
         Parent root=FXMLLoader.load(getClass().getResource("UniversityFrame.fxml"));
         Scene scene = new Scene(root);
         window.setScene(scene);
