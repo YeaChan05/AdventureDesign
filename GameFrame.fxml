@@ -9,6 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GameFrameController">
    <children>
       <Button fx:id="universityButton" alignment="CENTER" contentDisplay="CENTER" layoutY="750.0" mnemonicParsing="false" onAction="#OnuniversityButton" prefHeight="99.0" prefWidth="650.0" text="학교" textAlignment="CENTER">
