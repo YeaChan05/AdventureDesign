@@ -11,7 +11,7 @@ public class Main{
 	}
     
     public static void main(String[] args) throws Exception{
-        IntroFrameController.Launch();
-        // GameData gd=new GameData("./resources/gamedata/");
+        LoginFrameController login= new LoginFrameController();
+        login.getCon().Launch();
     }
 }   

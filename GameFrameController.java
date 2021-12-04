@@ -133,5 +133,5 @@ public class GameFrameController {
         assert universityImageView != null : "fx:id=\"universityImageView\" was not injected: check your FXML file 'GameFrame.fxml'.";
         assert userImageView != null : "fx:id=\"userImageView\" was not injected: check your FXML file 'GameFrame.fxml'.";
     }
-
+    
 }

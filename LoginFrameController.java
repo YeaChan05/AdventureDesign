@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 
 public class LoginFrameController {
     private Account account= new Account();
-    private Stage loginStage=new Stage();
+    
     private String account_string="";
     private IntroFrameController con;
     private GameData gameData; 
@@ -51,11 +51,12 @@ public class LoginFrameController {
 
     @FXML
     public void OnLogin(ActionEvent event) throws Exception {
+        Stage loginStage=new Stage();
         if(account.checkAccountFile(idtextfield.getText(),pwfield.getText())){
             System.out.println("login succes!");
             Node node =(Node)event.getSource();
             loginStage=(Stage)node.getScene().getWindow();
-            this.account_string=idtextfield.getText()+"#"+pwfield.getText();
+            this.account_string+=idtextfield.getText()+"#"+pwfield.getText();
             loginStage.close();
             con.closeStage();
             this.gameData=new GameData("./resources/gamedata/"+this.getaccount_string()+".csv");
@@ -86,11 +87,14 @@ public class LoginFrameController {
         assert loginbutton != null : "fx:id=\"loginbtn\" was not injected: check your FXML file 'LoginFrame.fxml'.";
         assert pw_text != null : "fx:id=\"pw_text\" was not injected: check your FXML file 'LoginFrame.fxml'.";
         assert pwfield != null : "fx:id=\"pwfield\" was not injected: check your FXML file 'LoginFrame.fxml'.";
-
     }
 
     public String getaccount_string(){
         return this.account_string;
+    }
+
+    public void setaccount_string(String account_string){
+        this.account_string= account_string;
     }
 
     public IntroFrameController getCon() {
@@ -101,7 +105,5 @@ public class LoginFrameController {
         this.con = con;
     }
 
-    public void setGameData(GameData gameData) {
-        this.gameData = gameData;
-    }
+
 }

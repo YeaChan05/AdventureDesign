@@ -11,7 +11,6 @@ public class GameData {
     private String filepath;
     private HashMap<String, String> map;
     private Character character;
-    private LoginFrameController lfc= new LoginFrameController();
     private BufferedReader br;
     private BufferedWriter bw;
     public GameData(String filepath) throws IOException{
