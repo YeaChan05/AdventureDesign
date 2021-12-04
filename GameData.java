@@ -17,63 +17,87 @@ public class GameData {
         this.filepath = filepath;
         this.map = new HashMap<String, String>();
         this.character=new Character();
-        this.br = new BufferedReader(new FileReader(filepath));
-        this.bw= new BufferedWriter(new FileWriter(this.filepath));
-    }
-
-    public void mkfile() throws IOException{
-        bw=new BufferedWriter(new FileWriter(this.filepath));
-    }
-
-    public void writefile() throws IOException{
         
-        bw.write("health,"+this.character.getHealth());
+        
+    }
+
+    public void writefile(Character character) throws IOException{
+        bw= new BufferedWriter(new FileWriter(this.filepath));
+        bw.write("health,"+character.getHealth());
         bw.newLine();
 
-        bw.write("activeness,"+this.character.getActiveness());
+        bw.write("activeness,"+character.getActiveness());
         bw.newLine();
 
-        bw.write("interest,"+this.character.getIntelligence());
+        bw.write("interest,"+character.getIntelligence());
         bw.newLine();
 
-        bw.write("money,"+this.character.getMoney());
+        bw.write("money,"+character.getMoney());
         bw.newLine();
 
-        bw.write("intelligence,"+this.character.getIntelligence());
+        bw.write("intelligence,"+character.getIntelligence());
         bw.newLine();
 
-        bw.write("period ,"+this.character.getPeriod().length);
+        // bw.write("period ,"+character.getPeriod().length);
+        // bw.newLine();
+
+        bw.write("lectureCount,"+character.getlectureCount());
         bw.newLine();
 
-        bw.write("lectureCount,"+this.character.getlectureCount());
-        bw.newLine();
-
-        bw.write("electionFlag,"+this.character.getElectionFlag());
+        // bw.write("electionFlag,"+character.getElectionFlag());
         bw.flush();
         bw.close();
         System.out.println("writefile!!");
     }
 
-    public void readfile() throws IOException{
+    public Character readfile() throws IOException{
+        br = new BufferedReader(new FileReader(this.filepath));
         System.out.println("readfile!!");
+        Character character=new Character();
         
-        try {
-            String line;
-            while ((line = br.readLine()) != null) {
-                System.out.println(line);
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }finally {
-            if(br != null) 
-                try {
-                    br.close(); 
-                }
-                catch (IOException e){}
-        }
-    }
+        
+        character.setHealth(Float.parseFloat((String)(Linetok(br.readLine()))));
 
-    
+        character.setActiveness(Float.parseFloat((String)(Linetok(br.readLine()))));
+
+        character.setInterest(Float.parseFloat((String)(Linetok(br.readLine()))));
+
+        character.setMoney(Integer.parseInt((String)(Linetok(br.readLine()))));
+
+        character.setIntelligence(Float.parseFloat((String)(Linetok(br.readLine()))));
+        
+        //character.setPeriod(Linetok(br.readLine()));
+
+        character.setlectureCount(Integer.parseInt((String)(Linetok(br.readLine()))));
+        
+        // character.setElectionFlag((Boolean)Linetok(br.readLine()));
+        
+        return character;
+        
+        // try {
+        //     String line;
+        //     while ((line = br.readLine()) != null) {
+        //         System.out.println(line);
+        //     }
+        // } catch (FileNotFoundException e) {
+        //     e.printStackTrace();
+        // } catch (IOException e) {
+        //     e.printStackTrace();
+        // }finally {
+        //     if(br != null) 
+        //         try {
+        //             br.close(); 
+        //         }
+        //         catch (IOException e){}
+        // }
+    }
+    public Object Linetok(String line){
+        StringTokenizer st= new StringTokenizer(line,",");
+        Object var="0";
+        while(st.hasMoreTokens()){
+            var=st.nextToken();
+        }
+        System.out.println((String)var);
+        return var;
+    }
 }
