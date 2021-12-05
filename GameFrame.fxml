@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GameFrameController">
+<AnchorPane fx:id="anchorpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GameFrameController">
    <children>
       <Button fx:id="universityButton" alignment="CENTER" contentDisplay="CENTER" layoutY="750.0" mnemonicParsing="false" onAction="#OnuniversityButton" prefHeight="99.0" prefWidth="650.0" text="학교" textAlignment="CENTER">
          <font>
@@ -34,10 +34,10 @@
          <font>
             <Font name="Tahoma Bold" size="52.0" />
          </font></Button>
-      <ProgressBar fx:id="healthProgressBar" prefHeight="30.0" prefWidth="100.0" progress="1.0" />
-      <ProgressBar fx:id="interestProgressBar" layoutY="30.0" prefHeight="30.0" prefWidth="100.0" progress="1.0" />
-      <ProgressBar fx:id="activenessProgressBar" layoutY="60.0" prefHeight="30.0" prefWidth="100.0" progress="0.09" />
-      <ProgressBar fx:id="intelligenceProgressBar" layoutY="90.0" prefHeight="30.0" prefWidth="100.0" progress="0.09" />
+      <ProgressBar fx:id="healthProgressBar" prefHeight="30.0" prefWidth="100.0" progress="0.0" />
+      <ProgressBar fx:id="interestProgressBar" layoutY="30.0" prefHeight="30.0" prefWidth="100.0" progress="0.0" />
+      <ProgressBar fx:id="activenessProgressBar" layoutY="60.0" prefHeight="30.0" prefWidth="100.0" progress="0.0" />
+      <ProgressBar fx:id="intelligenceProgressBar" layoutY="90.0" prefHeight="30.0" prefWidth="100.0" progress="0.0" />
       <ImageView fx:id="userImageView" fitHeight="127.0" fitWidth="127.0" layoutX="588.0" layoutY="362.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@resources/user.PNG" />
@@ -73,5 +73,6 @@
       <Text fx:id="intelligenceText" layoutX="105.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="30.0" />
       <Text fx:id="moneyText" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="100.0" />
       <Text fx:id="semesterText" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="100.0" />
+      <ProgressBar fx:id="timeProgressBar" layoutX="200.0" prefHeight="30.0" prefWidth="1100.0" progress="0.0" />
    </children>
 </AnchorPane>

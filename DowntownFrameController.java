@@ -7,7 +7,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 
 public class DowntownFrameController {
-
+    private GameFrameController gameFrameController=new GameFrameController();
     @FXML
     private ResourceBundle resources;
 
@@ -31,7 +31,7 @@ public class DowntownFrameController {
 
     @FXML
     void OnFitnessCenterButton(ActionEvent event) {
-
+        
     }
 
     @FXML
@@ -51,7 +51,12 @@ public class DowntownFrameController {
         assert Storebutton != null : "fx:id=\"Storebutton\" was not injected: check your FXML file 'DowntownFrame.fxml'.";
         assert anchorpane != null : "fx:id=\"anchorpane\" was not injected: check your FXML file 'DowntownFrame.fxml'.";
         assert downtownText != null : "fx:id=\"downtownText\" was not injected: check your FXML file 'DowntownFrame.fxml'.";
-
     }
 
+    public void setController(GameFrameController gameFrameController){
+        this.gameFrameController = gameFrameController;
+    }
+    public GameFrameController getController(){
+        return this.gameFrameController;
+    }
 }

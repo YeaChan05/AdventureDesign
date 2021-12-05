@@ -1,42 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="anchorpane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="550.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UniversityFrameController">
    <children>
-      <Button fx:id="studyButton" layoutX="450.0" layoutY="250.0" mnemonicParsing="false" onAction="#OnstudyButton" prefHeight="60.0" prefWidth="100.0" text="공부 ">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="clubactivitiesButton" layoutX="650.0" layoutY="250.0" mnemonicParsing="false" onAction="#OnclubactivitiesButton" prefHeight="60.0" prefWidth="100.0" text="동아리">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="majorlecture1Button" layoutX="100.0" layoutY="180.0" mnemonicParsing="false" onAction="#Onmajorlecture1Button" prefHeight="40.0" prefWidth="80.0" text="전공1" />
-      <Button fx:id="majorlecture2Button" layoutX="100.0" layoutY="220.0" mnemonicParsing="false" onAction="#Onmajorlecture2Button" prefHeight="40.0" prefWidth="80.0" text="전공 2" />
-      <Button fx:id="majorlecture3Button" layoutX="100.0" layoutY="260.0" mnemonicParsing="false" onAction="#Onmajorlecture3Button" prefHeight="40.0" prefWidth="80.0" text="전공 3" />
-      <Button fx:id="majorlecture4Button" layoutX="100.0" layoutY="300.0" mnemonicParsing="false" onAction="#Onmajorlecture4Button" prefHeight="40.0" prefWidth="80.0" text="전공 4" />
-      <Button fx:id="culturelecture1Button" layoutX="100.0" layoutY="340.0" mnemonicParsing="false" onAction="#Onculturelecture1Button" prefHeight="40.0" prefWidth="80.0" text="교양 1" />
-      <Button fx:id="culturelecture2Button" layoutX="100.0" layoutY="380.0" mnemonicParsing="false" onAction="#Onculturelecture2Button" prefHeight="40.0" prefWidth="80.0" text="교양 2" />
-      <Button fx:id="hiddeneventButton" disable="true" layoutX="510.0" layoutY="450.0" mnemonicParsing="false" onAction="#OnhiddeneventButton" prefHeight="58.0" prefWidth="128.0" text="히든이벤트">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="specialeventButton" disable="true" layoutX="670.0" layoutY="450.0" mnemonicParsing="false" onAction="#OnspecialeventButton" prefHeight="59.0" prefWidth="126.0" text="특수이벤트">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Button>
       <Text fx:id="universityText" layoutX="110.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="학교">
          <font>
             <Font size="30.0" />
          </font>
       </Text>
+      <ToggleButton fx:id="specialeventButton" disable="true" layoutX="385.0" layoutY="385.0" mnemonicParsing="false" onAction="#OnspecialeventButton" prefHeight="75.0" prefWidth="155.0" text="특수 이벤트" />
+      <ToggleButton fx:id="hiddeneventButton" disable="true" layoutX="625.0" layoutY="385.0" mnemonicParsing="false" onAction="#OnhiddeneventButton" prefHeight="75.0" prefWidth="155.0" text="히든 이벤트" />
+      <ToggleButton fx:id="majorlecture1Button" layoutX="90.0" layoutY="135.0" mnemonicParsing="false" onAction="#OnmajorlectureButton" prefHeight="50.0" prefWidth="90.0" text="전공1" />
+      <ToggleButton fx:id="majorlecture2Button" layoutX="90.0" layoutY="185.0" mnemonicParsing="false" onAction="#OnmajorlectureButton" prefHeight="50.0" prefWidth="90.0" text="전공2" />
+      <ToggleButton fx:id="majorlecture3Button" layoutX="90.0" layoutY="235.0" mnemonicParsing="false" onAction="#OnmajorlectureButton" prefHeight="50.0" prefWidth="90.0" text="전공3" />
+      <ToggleButton fx:id="majorlecture4Button" layoutX="90.0" layoutY="285.0" mnemonicParsing="false" onAction="#OnmajorlectureButton" prefHeight="50.0" prefWidth="90.0" text="전공4" />
+      <ToggleButton fx:id="culturelecture1Button" layoutX="90.0" layoutY="335.0" mnemonicParsing="false" onAction="#OnculturelectureButton" prefHeight="50.0" prefWidth="90.0" text="교양1" />
+      <ToggleButton fx:id="culturelecture2Button" layoutX="90.0" layoutY="385.0" mnemonicParsing="false" onAction="#OnculturelectureButton" prefHeight="50.0" prefWidth="90.0" text="교양2" />
+      <ToggleButton fx:id="clubactivitiesButton" layoutX="430.0" layoutY="250.0" mnemonicParsing="false" onAction="#OnclubactivitiesButton" prefHeight="70.0" prefWidth="100.0" text="동아리 활동" />
+      <Button fx:id="studyButton" layoutX="600.0" layoutY="250.0" mnemonicParsing="false" onAction="#OnstudyButton" prefHeight="70.0" prefWidth="100.0" text="자율 공부" />
    </children>
 </AnchorPane>

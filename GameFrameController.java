@@ -10,12 +10,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class GameFrameController {
-    private IntroFrameController introFrameController;
+    private IntroFrameController introFrameController=new IntroFrameController();
+    private UniversityFrameController universityFrameController;
+    private DowntownFrameController downtownFrameController;
     @FXML
     private ResourceBundle resources;
 
@@ -30,6 +33,9 @@ public class GameFrameController {
 
     @FXML
     private Text activenessText;
+
+    @FXML
+    private AnchorPane anchorpane;
 
     @FXML
     private Button downtownButton;
@@ -71,13 +77,13 @@ public class GameFrameController {
     private Text moneyText;
 
     @FXML
-    private ImageView optionImageView;
-
-    @FXML
     private Label semesterLabel;
 
     @FXML
     private Text semesterText;
+
+    @FXML
+    private ProgressBar timeProgressBar;
 
     @FXML
     private Button universityButton;
@@ -90,20 +96,32 @@ public class GameFrameController {
 
     @FXML
     void OndowntownButton(ActionEvent event) throws IOException {
-        // Stage window = new Stage();
-        // Parent root=FXMLLoader.load(getClass().getResource("UniversityFrame.fxml"));
-        // Scene scene = new Scene(root);
-        // window.setScene(scene);
-        // window.show();
+        Stage window = new Stage();
+        //Parent root=FXMLLoader.load(getClass().getResource("DowntownFrame.fxml"));
+        FXMLLoader Dloader = new FXMLLoader(getClass().getResource("DowntownFrame.fxml"));
+        Parent Dparent;
+        Dparent=Dloader.load();
+        this.downtownFrameController=Dloader.getController();
+        this.downtownFrameController.setController(this);
+        Scene scene = new Scene(Dparent);
+        window.setScene(scene);
+        window.show();
+        
     }
 
     @FXML
     void OnuniversityButton(ActionEvent event) throws IOException {
         Stage window = new Stage();
-        Parent root=FXMLLoader.load(getClass().getResource("UniversityFrame.fxml"));
-        Scene scene = new Scene(root);
+        //Parent root=FXMLLoader.load(getClass().getResource("UniversityFrame.fxml"));
+        FXMLLoader Uloader = new FXMLLoader(getClass().getResource("UniversityFrame.fxml"));
+        Parent Uparent;
+        Uparent=Uloader.load();
+        this.universityFrameController=Uloader.getController();
+        this.universityFrameController.setController(this);
+        Scene scene = new Scene(Uparent);
         window.setScene(scene);
         window.show();
+        
     }
 
     @FXML
@@ -111,6 +129,7 @@ public class GameFrameController {
         assert activenessLabel != null : "fx:id=\"activenessLabel\" was not injected: check your FXML file 'GameFrame.fxml'.";
         assert activenessProgressBar != null : "fx:id=\"activenessProgressBar\" was not injected: check your FXML file 'GameFrame.fxml'.";
         assert activenessText != null : "fx:id=\"activenessText\" was not injected: check your FXML file 'GameFrame.fxml'.";
+        assert anchorpane != null : "fx:id=\"anchorpane\" was not injected: check your FXML file 'GameFrame.fxml'.";
         assert downtownButton != null : "fx:id=\"downtownButton\" was not injected: check your FXML file 'GameFrame.fxml'.";
         assert downtownImageView != null : "fx:id=\"downtownImageView\" was not injected: check your FXML file 'GameFrame.fxml'.";
         assert healthLabel != null : "fx:id=\"healthLabel\" was not injected: check your FXML file 'GameFrame.fxml'.";
@@ -124,16 +143,24 @@ public class GameFrameController {
         assert interestText != null : "fx:id=\"interestText\" was not injected: check your FXML file 'GameFrame.fxml'.";
         assert moneyLabel != null : "fx:id=\"moneyLabel\" was not injected: check your FXML file 'GameFrame.fxml'.";
         assert moneyText != null : "fx:id=\"moneyText\" was not injected: check your FXML file 'GameFrame.fxml'.";
-        assert optionImageView != null : "fx:id=\"optionImageView\" was not injected: check your FXML file 'GameFrame.fxml'.";
         assert semesterLabel != null : "fx:id=\"semesterLabel\" was not injected: check your FXML file 'GameFrame.fxml'.";
         assert semesterText != null : "fx:id=\"semesterText\" was not injected: check your FXML file 'GameFrame.fxml'.";
+        assert timeProgressBar != null : "fx:id=\"timeProgressBar\" was not injected: check your FXML file 'GameFrame.fxml'.";
         assert universityButton != null : "fx:id=\"universityButton\" was not injected: check your FXML file 'GameFrame.fxml'.";
         assert universityImageView != null : "fx:id=\"universityImageView\" was not injected: check your FXML file 'GameFrame.fxml'.";
         assert userImageView != null : "fx:id=\"userImageView\" was not injected: check your FXML file 'GameFrame.fxml'.";
+
     }
 
     public void setCon(IntroFrameController introFrameController) {
         this.introFrameController=introFrameController;
     }
+    public IntroFrameController getCon() {
+        return this.introFrameController;
+    }
     
+    public void adjHealth(float temp){
+        introFrameController.getCharacter().adjHealth(temp);
+        healthProgressBar.setProgress(healthProgressBar.getProgress()+(double)(temp/100));
+    }
 }

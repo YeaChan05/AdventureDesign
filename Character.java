@@ -7,6 +7,8 @@ public class Character{
     private int[][] period=new int[2][8];
     private int lectureCount=0;
     private boolean electionFlag=false;
+    private int semester=0;
+    private int schoolyear=0;
     public Character() {	
     }
 
@@ -56,7 +58,13 @@ public class Character{
         this.period=period;
     }
 
+    public void setSemester(int semester){
+        this.semester=semester;
+    }
 
+    public void setSchoolyear(int schoolyear){
+        this.schoolyear=schoolyear;
+    }
 
 
     
@@ -93,7 +101,13 @@ public class Character{
         return this.period;
     }
 
+    public int getSemester(){
+        return this.semester;
+    }
 
+    public int getSchoolyear(){
+        return this.schoolyear;
+    }
 
 
 
@@ -120,5 +134,13 @@ public class Character{
 
     public int adjlectureCount(int temp){
         return this.lectureCount+=temp;
+    }
+
+    public int adjSemester(int temp){
+        return this.semester+=temp;
+    }
+
+    public int adjSchoolyear(int temp){
+        return this.schoolyear+=temp;
     }
 }

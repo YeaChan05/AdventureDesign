@@ -50,7 +50,6 @@ public class IntroFrameController extends Application implements EventHandler<Ac
         con.setCon(this);
         closeStage();
         GameData gd=new GameData("./resources/gamedata.txt");
-
         this.character=gd.readfile();
     }
 
@@ -92,4 +91,8 @@ public class IntroFrameController extends Application implements EventHandler<Ac
             }
 		});
 	}
+
+    public Character getCharacter() {
+        return this.character;
+    }
 }
