@@ -9,6 +9,16 @@ import javafx.scene.text.Text;
 
 public class UniversityFrameController {
     private GameFrameController gameFrameController=new GameFrameController();
+    private boolean majorlect1Flag=false;
+    private boolean majorlect2Flag=false;
+    private boolean majorlect3Flag=false;
+    private boolean majorlect4Flag=false;
+    private boolean culture1lectFlag=false;
+    private boolean culture2lectFlag=false;
+    private boolean specialeventFlag=false;
+    private boolean hiddeneventFlag=false ;
+    private boolean clubactivitiesFlag=false;
+
     @FXML
     private ResourceBundle resources;
 
@@ -57,21 +67,82 @@ public class UniversityFrameController {
     }
 
     @FXML
-    void OnculturelectureButton(ActionEvent event) {
-        
+    void Onculturelecture1Button(ActionEvent event) {
+        culture1lectFlag=!culture1lectFlag;
+        if(culture1lectFlag){
+            gameFrameController.adjHealth(1);
+        }
+        else{
+            gameFrameController.adjHealth(-1);
+        }
+        System.out.println(gameFrameController.getCon().getCharacter().getHealth());
+    }
+
+    @FXML
+    void Onculturelecture2Button(ActionEvent event) {
+        culture2lectFlag=!culture2lectFlag;
+        if(culture2lectFlag){
+            gameFrameController.adjHealth(1);
+        }
+        else{
+            gameFrameController.adjHealth(-1);
+        }
+        System.out.println(gameFrameController.getCon().getCharacter().getHealth());
     }
 
     @FXML
     void OnhiddeneventButton(ActionEvent event) {
-
+        
     }
 
     @FXML
-    void OnmajorlectureButton(ActionEvent event) {
-        gameFrameController.adjHealth(1);
+    void Onmajorlecture1Button(ActionEvent event) {
+        majorlect1Flag=!majorlect1Flag;
+        if(majorlect1Flag){
+            gameFrameController.adjHealth(1);
+        }
+        else{
+            gameFrameController.adjHealth(-1);
+        }
         System.out.println(gameFrameController.getCon().getCharacter().getHealth());
     }
-    
+
+    @FXML
+    void Onmajorlecture2Button(ActionEvent event) {
+        majorlect2Flag=!majorlect2Flag;
+        if(majorlect2Flag){
+            gameFrameController.adjHealth(1);
+        }
+        else{
+            gameFrameController.adjHealth(-1);
+        }
+        System.out.println(gameFrameController.getCon().getCharacter().getHealth());
+    }
+
+    @FXML
+    void Onmajorlecture3Button(ActionEvent event) {
+        majorlect3Flag=!majorlect3Flag;
+        if(majorlect3Flag){
+            gameFrameController.adjHealth(1);
+        }
+        else{
+            gameFrameController.adjHealth(-1);
+        }
+        System.out.println(gameFrameController.getCon().getCharacter().getHealth());
+    }
+
+    @FXML
+    void Onmajorlecture4Button(ActionEvent event) {
+        majorlect4Flag=!majorlect4Flag;
+        if(majorlect4Flag){
+            gameFrameController.adjHealth(1);
+        }
+        else{
+            gameFrameController.adjHealth(-1);
+        }
+        System.out.println(gameFrameController.getCon().getCharacter().getHealth());
+    }
+
     @FXML
     void OnspecialeventButton(ActionEvent event) {
 
@@ -102,6 +173,11 @@ public class UniversityFrameController {
     public void setController(GameFrameController gameFrameController){
         this.gameFrameController = gameFrameController;
     }
+
+    public GameFrameController getGameFrameController(){
+        return this.gameFrameController;
+    }
+
     public GameFrameController getController(){
         return this.gameFrameController;
     }
