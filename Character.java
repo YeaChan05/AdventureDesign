@@ -1,5 +1,5 @@
 public class Character{
-    private float health=0;
+    private float health=50;
     private float activeness=0;
     private float interest=0;
     private int money=0;

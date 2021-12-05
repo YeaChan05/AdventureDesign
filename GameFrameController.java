@@ -94,6 +94,8 @@ public class GameFrameController {
     @FXML
     private ImageView userImageView;
 
+    
+
     @FXML
     void OndowntownButton(ActionEvent event) throws IOException {
         Stage window = new Stage();
@@ -161,6 +163,8 @@ public class GameFrameController {
     
     public void adjHealth(float temp){
         introFrameController.getCharacter().adjHealth(temp);
-        healthProgressBar.setProgress(healthProgressBar.getProgress()+(double)(temp/100));
+        float hp=introFrameController.getCharacter().getHealth()+temp;
+        introFrameController.getCharacter().setHealth(hp);
+        healthProgressBar.setProgress(hp/100);
     }
 }

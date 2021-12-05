@@ -70,10 +70,10 @@ public class UniversityFrameController {
     void Onculturelecture1Button(ActionEvent event) {
         culture1lectFlag=!culture1lectFlag;
         if(culture1lectFlag){
-            gameFrameController.adjHealth(1);
+            gameFrameController.adjHealth(-1);
         }
         else{
-            gameFrameController.adjHealth(-1);
+            gameFrameController.adjHealth(1);
         }
         System.out.println(gameFrameController.getCon().getCharacter().getHealth());
     }
@@ -82,10 +82,10 @@ public class UniversityFrameController {
     void Onculturelecture2Button(ActionEvent event) {
         culture2lectFlag=!culture2lectFlag;
         if(culture2lectFlag){
-            gameFrameController.adjHealth(1);
+            gameFrameController.adjHealth(-1);
         }
         else{
-            gameFrameController.adjHealth(-1);
+            gameFrameController.adjHealth(1);
         }
         System.out.println(gameFrameController.getCon().getCharacter().getHealth());
     }
@@ -99,10 +99,10 @@ public class UniversityFrameController {
     void Onmajorlecture1Button(ActionEvent event) {
         majorlect1Flag=!majorlect1Flag;
         if(majorlect1Flag){
-            gameFrameController.adjHealth(1);
+            gameFrameController.adjHealth(-1);
         }
         else{
-            gameFrameController.adjHealth(-1);
+            gameFrameController.adjHealth(1);
         }
         System.out.println(gameFrameController.getCon().getCharacter().getHealth());
     }
@@ -111,10 +111,10 @@ public class UniversityFrameController {
     void Onmajorlecture2Button(ActionEvent event) {
         majorlect2Flag=!majorlect2Flag;
         if(majorlect2Flag){
-            gameFrameController.adjHealth(1);
+            gameFrameController.adjHealth(-1);
         }
         else{
-            gameFrameController.adjHealth(-1);
+            gameFrameController.adjHealth(1);
         }
         System.out.println(gameFrameController.getCon().getCharacter().getHealth());
     }
@@ -123,10 +123,10 @@ public class UniversityFrameController {
     void Onmajorlecture3Button(ActionEvent event) {
         majorlect3Flag=!majorlect3Flag;
         if(majorlect3Flag){
-            gameFrameController.adjHealth(1);
+            gameFrameController.adjHealth(-1);
         }
         else{
-            gameFrameController.adjHealth(-1);
+            gameFrameController.adjHealth(1);
         }
         System.out.println(gameFrameController.getCon().getCharacter().getHealth());
     }
@@ -135,10 +135,10 @@ public class UniversityFrameController {
     void Onmajorlecture4Button(ActionEvent event) {
         majorlect4Flag=!majorlect4Flag;
         if(majorlect4Flag){
-            gameFrameController.adjHealth(1);
+            gameFrameController.adjHealth(-1);
         }
         else{
-            gameFrameController.adjHealth(-1);
+            gameFrameController.adjHealth(1);
         }
         System.out.println(gameFrameController.getCon().getCharacter().getHealth());
     }
