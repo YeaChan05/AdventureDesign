@@ -162,9 +162,7 @@ public class GameFrameController {
     }
     
     public void adjHealth(float temp){
-        introFrameController.getCharacter().adjHealth(temp);
-        float hp=introFrameController.getCharacter().getHealth()+temp;
-        introFrameController.getCharacter().setHealth(hp);
-        healthProgressBar.setProgress(hp/100);
+        introFrameController.getCharacter().setHealth(introFrameController.getCharacter().getHealth()+temp);
+        healthProgressBar.setProgress(introFrameController.getCharacter().getHealth()+temp/100);
     }
 }
