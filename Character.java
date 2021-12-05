@@ -1,9 +1,9 @@
 public class Character{
     private float health=50;
-    private float activeness=0;
-    private float interest=0;
-    private int money=0;
-    private float intelligence=0;
+    private float activeness=50;
+    private float interest=50;
+    private int money=10000;
+    private float intelligence=50;
     private int[][] period=new int[2][8];
     private int lectureCount=0;
     private boolean electionFlag=false;

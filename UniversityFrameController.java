@@ -52,7 +52,12 @@ public class UniversityFrameController {
     private Text universityText;
 
     @FXML
-    void OnclubactivitiesButton(ActionEvent event) {
+    void OnspecialeventButton(ActionEvent event) {
+
+    }
+
+    @FXML
+    void OnhiddeneventButton(ActionEvent event) {
 
     }
 
@@ -61,82 +66,156 @@ public class UniversityFrameController {
         
         if(culturelecture1Button.isSelected()){
             gameFrameController.adjHealth(-1);
+            gameFrameController.adjInterest(-0.5f);
+            gameFrameController.adjIntelligence(1);
         }
         else{
             gameFrameController.adjHealth(1);
+            gameFrameController.adjInterest(0.5f);
+            gameFrameController.adjIntelligence(-1);
         }
-        System.out.println(gameFrameController.getCon().getCharacter().getHealth());
+        //System.out.println(gameFrameController.getCon().getCharacter().getHealth());
+        System.out.println("체력: "+ gameFrameController.getIntroFrameController().getCharacter().getHealth());
+        System.out.println("흥미: "+ gameFrameController.getIntroFrameController().getCharacter().getInterest());
+        System.out.println("지능: "+ gameFrameController.getIntroFrameController().getCharacter().getIntelligence());
+        System.out.println("적극성: "+ gameFrameController.getIntroFrameController().getCharacter().getIntelligence());
+        System.out.println();
     }
 
     @FXML
     void Onculturelecture2Button(ActionEvent event) {
-        if(culturelecture1Button.isSelected()){
+        if(culturelecture2Button.isSelected()){
             gameFrameController.adjHealth(-1);
+            gameFrameController.adjInterest(-0.5f);
+            gameFrameController.adjIntelligence(1);
         }
         else{
             gameFrameController.adjHealth(1);
+            gameFrameController.adjInterest(0.5f);
+            gameFrameController.adjIntelligence(-1);
         }
-        System.out.println(gameFrameController.getCon().getCharacter().getHealth());
+       // System.out.println(gameFrameController.getCon().getCharacter().getHealth());
+        System.out.println("체력: "+ gameFrameController.getIntroFrameController().getCharacter().getHealth());
+        System.out.println("흥미: "+ gameFrameController.getIntroFrameController().getCharacter().getInterest());
+        System.out.println("지능: "+ gameFrameController.getIntroFrameController().getCharacter().getIntelligence());
+        System.out.println("적극성: "+ gameFrameController.getIntroFrameController().getCharacter().getIntelligence());
+        System.out.println();
     }
 
-    @FXML
-    void OnhiddeneventButton(ActionEvent event) {
-        
-    }
+    
 
     @FXML
     void Onmajorlecture1Button(ActionEvent event) {
         if(majorlecture1Button.isSelected()){
             gameFrameController.adjHealth(-1);
+            gameFrameController.adjInterest(-0.5f);
+            gameFrameController.adjIntelligence(1);
         }
         else{
             gameFrameController.adjHealth(1);
+            gameFrameController.adjInterest(0.5f);
+            gameFrameController.adjIntelligence(-1);
         }
-        System.out.println(gameFrameController.getCon().getCharacter().getHealth());
+        System.out.println("체력: "+ gameFrameController.getIntroFrameController().getCharacter().getHealth());
+        System.out.println("흥미: "+ gameFrameController.getIntroFrameController().getCharacter().getInterest());
+        System.out.println("지능: "+ gameFrameController.getIntroFrameController().getCharacter().getIntelligence());
+        System.out.println("적극성: "+ gameFrameController.getIntroFrameController().getCharacter().getIntelligence());
+        System.out.println();
     }
 
     @FXML
     void Onmajorlecture2Button(ActionEvent event) {
-        if(majorlecture1Button.isSelected()){
+        if(majorlecture2Button.isSelected()){
             gameFrameController.adjHealth(-1);
+            gameFrameController.adjInterest(-0.5f);
+            gameFrameController.adjIntelligence(1);
         }
         else{
             gameFrameController.adjHealth(1);
+            gameFrameController.adjInterest(0.5f);
+            gameFrameController.adjIntelligence(-1);
         }
-        System.out.println(gameFrameController.getCon().getCharacter().getHealth());
+        System.out.println("체력: "+ gameFrameController.getIntroFrameController().getCharacter().getHealth());
+        System.out.println("흥미: "+ gameFrameController.getIntroFrameController().getCharacter().getInterest());
+        System.out.println("지능: "+ gameFrameController.getIntroFrameController().getCharacter().getIntelligence());
+        System.out.println("적극성: "+ gameFrameController.getIntroFrameController().getCharacter().getIntelligence());
+        System.out.println();
     }
 
     @FXML
     void Onmajorlecture3Button(ActionEvent event) {
-        if(majorlecture1Button.isSelected()){
+        if(majorlecture3Button.isSelected()){
             gameFrameController.adjHealth(-1);
+            gameFrameController.adjInterest(-0.5f);
+            gameFrameController.adjIntelligence(1);
         }
         else{
             gameFrameController.adjHealth(1);
+            gameFrameController.adjInterest(0.5f);
+            gameFrameController.adjIntelligence(-1);
         }
-        System.out.println(gameFrameController.getCon().getCharacter().getHealth());
+        System.out.println("체력: "+ gameFrameController.getIntroFrameController().getCharacter().getHealth());
+        System.out.println("흥미: "+ gameFrameController.getIntroFrameController().getCharacter().getInterest());
+        System.out.println("지능: "+ gameFrameController.getIntroFrameController().getCharacter().getIntelligence());
+        System.out.println("적극성: "+ gameFrameController.getIntroFrameController().getCharacter().getIntelligence());
+        System.out.println();
+      
     }
 
     @FXML
     void Onmajorlecture4Button(ActionEvent event) {
-        if(majorlecture1Button.isSelected()){
+        if(majorlecture4Button.isSelected()){
             gameFrameController.adjHealth(-1);
+            gameFrameController.adjInterest(-0.5f);
+            gameFrameController.adjIntelligence(1);
+           
         }
         else{
             gameFrameController.adjHealth(1);
+            gameFrameController.adjInterest(0.5f);
+            gameFrameController.adjIntelligence(-1);
         }
-        System.out.println(gameFrameController.getCon().getCharacter().getHealth());
+        System.out.println("체력: "+ gameFrameController.getIntroFrameController().getCharacter().getHealth());
+        System.out.println("흥미: "+ gameFrameController.getIntroFrameController().getCharacter().getInterest());
+        System.out.println("지능: "+ gameFrameController.getIntroFrameController().getCharacter().getIntelligence());
+        System.out.println("적극성: "+ gameFrameController.getIntroFrameController().getCharacter().getIntelligence());
+        System.out.println();
+        
     }
 
-    @FXML
-    void OnspecialeventButton(ActionEvent event) {
-
-    }
-
+    
     @FXML
     void OnstudyButton(ActionEvent event) {
-
+        gameFrameController.adjHealth(-1);
+        gameFrameController.adjInterest(-1);
+        gameFrameController.adjIntelligence(2);
+        System.out.println("체력: "+ gameFrameController.getIntroFrameController().getCharacter().getHealth());
+        System.out.println("흥미: "+ gameFrameController.getIntroFrameController().getCharacter().getInterest());
+        System.out.println("지능: "+ gameFrameController.getIntroFrameController().getCharacter().getIntelligence());
+        System.out.println("적극성: "+ gameFrameController.getIntroFrameController().getCharacter().getIntelligence());
+        System.out.println();
     }
+    
+    @FXML
+    void OnclubactivitiesButton(ActionEvent event) {
+       if(clubactivitiesButton.isSelected()){
+            gameFrameController.adjHealth(-1);
+            gameFrameController.adjInterest(1);
+            gameFrameController.adjactiveness(1);
+       }
+        else{
+            gameFrameController.adjHealth(1);
+            gameFrameController.adjInterest(-1);
+            gameFrameController.adjactiveness(-1);
+        }
+        System.out.println("체력: "+ gameFrameController.getIntroFrameController().getCharacter().getHealth());
+        System.out.println("흥미: "+ gameFrameController.getIntroFrameController().getCharacter().getInterest());
+        System.out.println("지능: "+ gameFrameController.getIntroFrameController().getCharacter().getIntelligence());
+        System.out.println("적극성: "+ gameFrameController.getIntroFrameController().getCharacter().getIntelligence());
+        System.out.println();
+      
+    }
+
 
     @FXML
     void initialize() {
@@ -155,7 +234,7 @@ public class UniversityFrameController {
 
     }
 
-    public void setController(GameFrameController gameFrameController){
+    public void setGameFrameController(GameFrameController gameFrameController){
         this.gameFrameController = gameFrameController;
     }
 
@@ -165,5 +244,9 @@ public class UniversityFrameController {
 
     public GameFrameController getController(){
         return this.gameFrameController;
+    }
+
+    public Character getUCharacter(){
+        return gameFrameController.getIntroFrameController().getCharacter();
     }
 }

@@ -9,12 +9,11 @@ import java.util.StringTokenizer;
 import java.util.HashMap;
 public class GameData {
     private String filepath;
-    private Character character;
     private BufferedReader br;
     private BufferedWriter bw;
     public GameData(String filepath) throws IOException{
         this.filepath = filepath;
-        this.character=new Character();
+        
         }
 
     public void writefile(Character character) throws IOException{
@@ -51,7 +50,6 @@ public class GameData {
         br = new BufferedReader(new FileReader(this.filepath));
         System.out.println("readfile!!");
         Character character=new Character();
-    
         character.setHealth(Float.parseFloat((String)(Linetok(br.readLine()))));
 
         character.setActiveness(Float.parseFloat((String)(Linetok(br.readLine()))));

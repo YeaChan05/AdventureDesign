@@ -15,10 +15,11 @@ import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class GameFrameController {
+public class GameFrameController extends IntroFrameController{
     private IntroFrameController introFrameController=new IntroFrameController();
     private UniversityFrameController universityFrameController;
     private DowntownFrameController downtownFrameController;
+    private Character character;
     @FXML
     private ResourceBundle resources;
 
@@ -105,10 +106,10 @@ public class GameFrameController {
         Dparent=Dloader.load();
         this.downtownFrameController=Dloader.getController();
         this.downtownFrameController.setController(this);
+        this.character=this.introFrameController.getCharacter();
         Scene scene = new Scene(Dparent);
         window.setScene(scene);
         window.show();
-        
     }
 
     @FXML
@@ -119,7 +120,7 @@ public class GameFrameController {
         Parent Uparent;
         Uparent=Uloader.load();
         this.universityFrameController=Uloader.getController();
-        this.universityFrameController.setController(this);
+        this.universityFrameController.setGameFrameController(this);
         Scene scene = new Scene(Uparent);
         window.setScene(scene);
         window.show();
@@ -154,15 +155,53 @@ public class GameFrameController {
 
     }
 
-    public void setCon(IntroFrameController introFrameController) {
-        this.introFrameController=introFrameController;
-    }
-    public IntroFrameController getCon() {
-        return this.introFrameController;
-    }
-    
     public void adjHealth(float temp){
         introFrameController.getCharacter().setHealth(introFrameController.getCharacter().getHealth()+temp);
-        healthProgressBar.setProgress(introFrameController.getCharacter().getHealth()+temp/100);
+        healthProgressBar.setProgress((introFrameController.getCharacter().getHealth()+temp)/100);
+        this.setCharacter(introFrameController.getCharacter());
     }
+
+    public void adjInterest(float temp) {
+    	introFrameController.getCharacter().setInterest(introFrameController.getCharacter().getInterest()+temp);
+        interestProgressBar.setProgress((introFrameController.getCharacter().getInterest()+temp)/100);
+        this.setCharacter(introFrameController.getCharacter());
+    }
+    
+    public void adjactiveness(float temp) {
+    	introFrameController.getCharacter().setActiveness(introFrameController.getCharacter().getActiveness()+temp);
+        activenessProgressBar.setProgress((introFrameController.getCharacter().getActiveness()+temp)/100);
+        this.setCharacter(introFrameController.getCharacter());
+    }
+    
+    public void adjIntelligence(float temp) {
+    	introFrameController.getCharacter().setIntelligence(introFrameController.getCharacter().getIntelligence()+temp);
+        intelligenceProgressBar.setProgress((introFrameController.getCharacter().getIntelligence()+temp)/100);
+        this.setCharacter(introFrameController.getCharacter());
+    }
+
+
+
+    public void setIntroFrameController(IntroFrameController introFrameController) {
+        this.introFrameController=introFrameController;
+    }
+
+    public IntroFrameController getIntroFrameController() {
+        return this.introFrameController;
+    }
+
+    public void setUniversityFrameController(UniversityFrameController universityFrameController){
+        this.universityFrameController= universityFrameController;
+    }
+
+    public UniversityFrameController getUniversityFrameController() {
+        return this.universityFrameController;
+    } 
+    
+    public void setDowntownFrameController(DowntownFrameController downtownFrameController) {
+        this.downtownFrameController=downtownFrameController;
+    }
+
+    public DowntownFrameController getDowntownFrameController() {
+        return this.downtownFrameController;
+    } 
 }

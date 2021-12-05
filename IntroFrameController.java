@@ -18,8 +18,9 @@ import javafx.stage.Stage;
 
 public class IntroFrameController extends Application implements EventHandler<ActionEvent>{
     private Stage window;
-    private  Character character=new Character();;
+    private  Character character=new Character();
     GameFrameController con;
+    private GameFrameController temp;
     
     @FXML
     private ResourceBundle resources;
@@ -47,10 +48,9 @@ public class IntroFrameController extends Application implements EventHandler<Ac
         FXMLLoader loader = new FXMLLoader(getClass().getResource("GameFrame.fxml"));
         Parent parent = loader.load();
         con=loader.getController();
-        con.setCon(this);
+        con.setIntroFrameController(this);
+        this.character=con.getCharacter();
         closeStage();
-        GameData gd=new GameData("./resources/gamedata.txt");
-        this.character=gd.readfile();
     }
 
     @Override
@@ -59,6 +59,16 @@ public class IntroFrameController extends Application implements EventHandler<Ac
         stage.getIcons().add(new Image("file:resources/user.png"));
         stage.setScene(new Scene(root));
         stage.show();
+        GameData gd=new GameData("./resources/gamedata.txt");
+        this.setCharacter(gd.readfile());
+        stage.setOnCloseRequest(e->{
+            try {
+                gd.writefile(this.character);
+            } catch (IOException e1) {
+                // TODO Auto-generated catch block
+                e1.printStackTrace();
+            }
+        });
     }
 
     @Override
@@ -69,14 +79,13 @@ public class IntroFrameController extends Application implements EventHandler<Ac
 
     @Override
     public void stop() throws Exception {
-        GameData gd=new GameData("./resources/gamedata.txt");
-       
-        gd.writefile(this.character);
         super.stop();
     }
+    
     public static void Launch() {
         launch();
     }
+
     public void closeStage() {
 		Stage stage = (Stage)anchorpane.getScene().getWindow();
 		Platform.runLater(() -> {
@@ -94,5 +103,9 @@ public class IntroFrameController extends Application implements EventHandler<Ac
 
     public Character getCharacter() {
         return this.character;
+    }
+
+    public void setCharacter(Character character) {
+        this.character = character;
     }
 }
