@@ -1,6 +1,4 @@
 import java.util.Scanner;
-import java.util.StringTokenizer;
-
 public class Main{
 	
 	static Scanner sin = new Scanner(System.in);
