@@ -61,14 +61,6 @@ public class IntroFrameController extends Application implements EventHandler<Ac
         stage.show();
         GameData gd=new GameData("./resources/gamedata.txt");
         this.setCharacter(gd.readfile());
-        stage.setOnCloseRequest(e->{
-            try {
-                gd.writefile(this.character);
-            } catch (IOException e1) {
-                // TODO Auto-generated catch block
-                e1.printStackTrace();
-            }
-        });
     }
 
     @Override

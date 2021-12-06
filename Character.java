@@ -9,6 +9,7 @@ public class Character{
     private boolean electionFlag=false;
     private int semester=0;
     private int schoolyear=0;
+    private float time=0;
     public Character() {	
     }
 
@@ -66,6 +67,10 @@ public class Character{
         this.schoolyear=schoolyear;
     }
 
+    public void setTime(int time){
+        this.time=time;
+    }
+
 
     
     //데이터 호출
@@ -109,30 +114,52 @@ public class Character{
         return this.schoolyear;
     }
 
+    public float getTime(){
+        return this.time;
+    }
+
 
 
     //기존 데이터 변경
     public float adjHealth(float temp){
+        if((this.activeness+temp<0)||(this.activeness+temp>100)){
+            return this.health;
+        }
         return this.health+=temp;
     }
 
     public float adjActiveness(float temp){
+        if((this.activeness+temp>0)||(this.activeness+temp<100)){
+            return this.activeness;
+        }
         return this.activeness+=temp;
     }
 
     public float adjInterest(float temp){
+        if((this.interest+temp<0)||(this.interest+temp>100)){
+            return this.interest;
+        }
         return this.interest+=temp;
     }
 
     public float adjMoney(float temp){
+        if(this.money+temp<0){
+            return this.money;
+        }
         return this.money+=temp;
     }
     
     public float adjIntelligence(float temp){
+        if((this.intelligence+temp)<0||(this.intelligence+temp>100)){
+            return this.intelligence;
+        }
         return this.intelligence+=temp;
     }
 
     public int adjlectureCount(int temp){
+        // if(()||()){
+            
+        // }
         return this.lectureCount+=temp;
     }
 
@@ -141,6 +168,16 @@ public class Character{
     }
 
     public int adjSchoolyear(int temp){
+        // if((this.schoolyear+temp<0)||(this.schoolyear+temp>100)){
+        //     return this.schoolyear;
+        // }
         return this.schoolyear+=temp;
+    }
+
+    public float adjTime(float temp){
+        if((this.time+temp<0)||(this.time+temp>100)){
+            return this.time;
+        }
+        return this.time+=temp;
     }
 }

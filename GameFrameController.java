@@ -124,7 +124,6 @@ public class GameFrameController extends IntroFrameController{
         Scene scene = new Scene(Uparent);
         window.setScene(scene);
         window.show();
-        
     }
 
     @FXML
@@ -157,25 +156,47 @@ public class GameFrameController extends IntroFrameController{
 
     public void adjHealth(float temp){
         introFrameController.getCharacter().setHealth(introFrameController.getCharacter().getHealth()+temp);
-        healthProgressBar.setProgress((introFrameController.getCharacter().getHealth()+temp)/100);
+        float var=(introFrameController.getCharacter().getHealth()+temp)/100;
+        if((var>=0f)&&(var<1f)){
+            healthProgressBar.setProgress(var);
+        }
         this.setCharacter(introFrameController.getCharacter());
     }
 
     public void adjInterest(float temp) {
     	introFrameController.getCharacter().setInterest(introFrameController.getCharacter().getInterest()+temp);
-        interestProgressBar.setProgress((introFrameController.getCharacter().getInterest()+temp)/100);
+        float var=(introFrameController.getCharacter().getInterest()+temp)/100;
+        if((var>=0f)&&(var<1f)){
+            interestProgressBar.setProgress(var);
+        }
+        
         this.setCharacter(introFrameController.getCharacter());
     }
     
     public void adjactiveness(float temp) {
     	introFrameController.getCharacter().setActiveness(introFrameController.getCharacter().getActiveness()+temp);
-        activenessProgressBar.setProgress((introFrameController.getCharacter().getActiveness()+temp)/100);
+        float var=(introFrameController.getCharacter().getActiveness()+temp)/100;
+        if((var>=0f)&&(var<1f)){
+            activenessProgressBar.setProgress(var);
+        }
         this.setCharacter(introFrameController.getCharacter());
     }
     
     public void adjIntelligence(float temp) {
     	introFrameController.getCharacter().setIntelligence(introFrameController.getCharacter().getIntelligence()+temp);
-        intelligenceProgressBar.setProgress((introFrameController.getCharacter().getIntelligence()+temp)/100);
+        float var=(introFrameController.getCharacter().getIntelligence()+temp)/100;
+        if((var>=0f)&&(var<1f)){
+            intelligenceProgressBar.setProgress(var);
+        }
+        this.setCharacter(introFrameController.getCharacter());
+    }
+
+    public void adjTime(float temp) {
+    	introFrameController.getCharacter().setIntelligence(introFrameController.getCharacter().getTime()+temp);
+        float var=(introFrameController.getCharacter().getTime()+temp)/100;
+        if((var>=0f)&&(var<1f)){
+            timeProgressBar.setProgress(var);
+        }
         this.setCharacter(introFrameController.getCharacter());
     }
 
