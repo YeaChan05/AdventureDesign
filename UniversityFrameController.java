@@ -65,16 +65,18 @@ public class UniversityFrameController {
     @FXML
     void Onculturelecture1Button(ActionEvent event) throws IOException {
         if(culturelecture1Button.isSelected()){
-            gameFrameController.adjHealth(-1);
+            gameFrameController.adjHealth(-1f);
             gameFrameController.adjInterest(-0.5f);
-            gameFrameController.adjIntelligence(1);
+            gameFrameController.adjIntelligence(1f);
             gameFrameController.adjTime(1f);
+            gameFrameController.adjlectureCount(1);
             }
         else{
-            gameFrameController.adjHealth(1);
+            gameFrameController.adjHealth(1f);
             gameFrameController.adjInterest(0.5f);
-            gameFrameController.adjIntelligence(-1);
+            gameFrameController.adjIntelligence(-1f);
             gameFrameController.adjTime(-1f);
+            gameFrameController.adjlectureCount(-1);
         }
         //System.out.println(gameFrameController.getCon().getCharacter().getHealth());
         GameData gd=new GameData("./resources/gamedata.txt");
@@ -84,16 +86,18 @@ public class UniversityFrameController {
     @FXML
     void Onculturelecture2Button(ActionEvent event) throws IOException {
         if(culturelecture2Button.isSelected()){
-            gameFrameController.adjHealth(-1);
+            gameFrameController.adjHealth(-1f);
             gameFrameController.adjInterest(-0.5f);
-            gameFrameController.adjIntelligence(1);
+            gameFrameController.adjIntelligence(1f);
             gameFrameController.adjTime(1f);
+            gameFrameController.adjlectureCount(1);
         }
         else{
-            gameFrameController.adjHealth(1);
+            gameFrameController.adjHealth(1f);
             gameFrameController.adjInterest(0.5f);
-            gameFrameController.adjIntelligence(-1);
+            gameFrameController.adjIntelligence(-1f);
             gameFrameController.adjTime(-1f);
+            gameFrameController.adjlectureCount(-1);
         }
        // System.out.println(gameFrameController.getCon().getCharacter().getHealth());
         GameData gd=new GameData("./resources/gamedata.txt");
@@ -105,16 +109,18 @@ public class UniversityFrameController {
     @FXML
     void Onmajorlecture1Button(ActionEvent event) throws IOException {
         if(majorlecture1Button.isSelected()){
-            gameFrameController.adjHealth(-1);
+            gameFrameController.adjHealth(-1f);
             gameFrameController.adjInterest(-0.5f);
-            gameFrameController.adjIntelligence(1);
+            gameFrameController.adjIntelligence(1f);
             gameFrameController.adjTime(1f);
+            gameFrameController.adjlectureCount(1);
         }
         else{
-            gameFrameController.adjHealth(1);
+            gameFrameController.adjHealth(1f);
             gameFrameController.adjInterest(0.5f);
-            gameFrameController.adjIntelligence(-1);
+            gameFrameController.adjIntelligence(-1f);
             gameFrameController.adjTime(-1f);
+            gameFrameController.adjlectureCount(-1);
         }
         GameData gd=new GameData("./resources/gamedata.txt");
         gd.writefile(this.getUCharacter());
@@ -123,16 +129,18 @@ public class UniversityFrameController {
     @FXML
     void Onmajorlecture2Button(ActionEvent event) throws IOException {
         if(majorlecture2Button.isSelected()){
-            gameFrameController.adjHealth(-1);
+            gameFrameController.adjHealth(-1f);
             gameFrameController.adjInterest(-0.5f);
-            gameFrameController.adjIntelligence(1);
+            gameFrameController.adjIntelligence(1f);
             gameFrameController.adjTime(1f);
+            gameFrameController.adjlectureCount(1);
         }
         else{
-            gameFrameController.adjHealth(1);
+            gameFrameController.adjHealth(1f);
             gameFrameController.adjInterest(0.5f);
-            gameFrameController.adjIntelligence(-1);
+            gameFrameController.adjIntelligence(-1f);
             gameFrameController.adjTime(-1f);
+            gameFrameController.adjlectureCount(-1);
         }
         GameData gd=new GameData("./resources/gamedata.txt");
         gd.writefile(this.getUCharacter());
@@ -141,16 +149,18 @@ public class UniversityFrameController {
     @FXML
     void Onmajorlecture3Button(ActionEvent event) throws IOException {
         if(majorlecture3Button.isSelected()){
-            gameFrameController.adjHealth(-1);
+            gameFrameController.adjHealth(-1f);
             gameFrameController.adjInterest(-0.5f);
-            gameFrameController.adjIntelligence(1);
+            gameFrameController.adjIntelligence(1f);
             gameFrameController.adjTime(1f);
+            gameFrameController.adjlectureCount(1);
         }
         else{
-            gameFrameController.adjHealth(1);
+            gameFrameController.adjHealth(1f);
             gameFrameController.adjInterest(0.5f);
-            gameFrameController.adjIntelligence(-1);
+            gameFrameController.adjIntelligence(-1f);
             gameFrameController.adjTime(-1f);
+            gameFrameController.adjlectureCount(-1);
         }
         GameData gd=new GameData("./resources/gamedata.txt");
         gd.writefile(this.getUCharacter());
@@ -159,16 +169,18 @@ public class UniversityFrameController {
     @FXML
     void Onmajorlecture4Button(ActionEvent event) throws IOException {
         if(majorlecture4Button.isSelected()){
-            gameFrameController.adjHealth(-1);
+            gameFrameController.adjHealth(-1f);
             gameFrameController.adjInterest(-0.5f);
-            gameFrameController.adjIntelligence(1);
+            gameFrameController.adjIntelligence(1f);
             gameFrameController.adjTime(1f);
+            gameFrameController.adjlectureCount(1);
         }
         else{
-            gameFrameController.adjHealth(1);
+            gameFrameController.adjHealth(1f);
             gameFrameController.adjInterest(0.5f);
-            gameFrameController.adjIntelligence(-1);
+            gameFrameController.adjIntelligence(-1f);
             gameFrameController.adjTime(-1f);
+            gameFrameController.adjlectureCount(-1);
         }
         GameData gd=new GameData("./resources/gamedata.txt");
         gd.writefile(this.getUCharacter());
@@ -177,10 +189,11 @@ public class UniversityFrameController {
     
     @FXML
     void OnstudyButton(ActionEvent event) throws IOException {
-        gameFrameController.adjHealth(-1);
-        gameFrameController.adjInterest(-1);
-        gameFrameController.adjIntelligence(2);
+        gameFrameController.adjHealth(-1f);
+        gameFrameController.adjInterest(-1f);
+        gameFrameController.adjIntelligence(2f);
         gameFrameController.adjTime(1f);
+        
         GameData gd=new GameData("./resources/gamedata.txt");
         gd.writefile(this.getUCharacter());
     }
@@ -188,15 +201,15 @@ public class UniversityFrameController {
     @FXML
     void OnclubactivitiesButton(ActionEvent event) throws IOException {
        if(clubactivitiesButton.isSelected()){
-            gameFrameController.adjHealth(-1);
-            gameFrameController.adjInterest(1);
-            gameFrameController.adjactiveness(1);
+            gameFrameController.adjHealth(-1f);
+            gameFrameController.adjInterest(1f);
+            gameFrameController.adjactiveness(1f);
             gameFrameController.adjTime(1f);
        }
         else{
-            gameFrameController.adjHealth(1);
-            gameFrameController.adjInterest(-1);
-            gameFrameController.adjactiveness(-1);
+            gameFrameController.adjHealth(1f);
+            gameFrameController.adjInterest(-1f);
+            gameFrameController.adjactiveness(-1f);
             gameFrameController.adjTime(-1f);
         }
         GameData gd=new GameData("./resources/gamedata.txt");

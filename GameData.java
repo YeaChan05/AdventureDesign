@@ -3,10 +3,9 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.HashMap;
 import java.io.FileNotFoundException;
 import java.util.StringTokenizer;
-import java.util.HashMap;
+
 public class GameData {
     private String filepath;
     private BufferedReader br;
@@ -19,6 +18,9 @@ public class GameData {
     public void writefile(Character character) throws IOException{
         bw= new BufferedWriter(new FileWriter(this.filepath));
         
+        bw.write("time,"+character.getTime());
+        bw.newLine();
+
         bw.write("health,"+character.getHealth());
         bw.newLine();
 
@@ -34,13 +36,16 @@ public class GameData {
         bw.write("intelligence,"+character.getIntelligence());
         bw.newLine();
 
-        // bw.write("period ,"+character.getPeriod().length);
-        // bw.newLine();
+        bw.write("school year,"+character.getSchoolyear());
+        bw.newLine();
+
+        bw.write("semester,"+character.getSemester());
+        bw.newLine();
 
         bw.write("lectureCount,"+character.getlectureCount());
         bw.newLine();
 
-        // bw.write("electionFlag,"+character.getElectionFlag());
+        bw.write("electionFlag,"+character.getElectionFlag());
         bw.flush();
         bw.close();
         System.out.println("writefile!!");
@@ -50,6 +55,8 @@ public class GameData {
         br = new BufferedReader(new FileReader(this.filepath));
         System.out.println("readfile!!");
         Character character=new Character();
+        character.setTime(Float.parseFloat((String)(Linetok(br.readLine()))));
+
         character.setHealth(Float.parseFloat((String)(Linetok(br.readLine()))));
 
         character.setActiveness(Float.parseFloat((String)(Linetok(br.readLine()))));
@@ -60,11 +67,13 @@ public class GameData {
 
         character.setIntelligence(Float.parseFloat((String)(Linetok(br.readLine()))));
         
-        //character.setPeriod(Linetok(br.readLine()));
+        character.setSchoolyear(Integer.parseInt((String)(Linetok(br.readLine()))));
+
+        character.setSemester(Integer.parseInt((String)(Linetok(br.readLine()))));
 
         character.setlectureCount(Integer.parseInt((String)(Linetok(br.readLine()))));
         
-        // character.setElectionFlag((Boolean)Linetok(br.readLine()));
+        character.setElectionFlag(Boolean.parseBoolean((String)br.readLine()));
         
         return character;
     }

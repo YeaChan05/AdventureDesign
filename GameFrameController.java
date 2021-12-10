@@ -127,7 +127,15 @@ public class GameFrameController extends IntroFrameController{
     }
 
     @FXML
-    void initialize() {
+    void initialize() throws IOException {
+        GameData gd=new GameData("./resources/gamedata.txt");
+        introFrameController.setCharacter(gd.readfile());
+        this.timeProgressBar.setProgress((Float)(introFrameController.getCharacter().getTime()/100));
+        this.healthProgressBar.setProgress((Float)(introFrameController.getCharacter().getHealth()/100));
+        this.interestProgressBar.setProgress((Float)(introFrameController.getCharacter().getInterest()/100));
+        this.activenessProgressBar.setProgress((Float)(introFrameController.getCharacter().getActiveness()/100));
+        this.intelligenceProgressBar.setProgress((Float)(introFrameController.getCharacter().getIntelligence()/100));
+        
         assert activenessLabel != null : "fx:id=\"activenessLabel\" was not injected: check your FXML file 'GameFrame.fxml'.";
         assert activenessProgressBar != null : "fx:id=\"activenessProgressBar\" was not injected: check your FXML file 'GameFrame.fxml'.";
         assert activenessText != null : "fx:id=\"activenessText\" was not injected: check your FXML file 'GameFrame.fxml'.";
@@ -155,48 +163,32 @@ public class GameFrameController extends IntroFrameController{
     }
 
     public void adjHealth(float temp){
-        introFrameController.getCharacter().setHealth(introFrameController.getCharacter().getHealth()+temp);
-        float var=(introFrameController.getCharacter().getHealth()+temp)/100;
-        if((var>=0f)&&(var<1f)){
-            healthProgressBar.setProgress(var);
-        }
+        healthProgressBar.setProgress(((Float)introFrameController.getCharacter().adjHealth(temp)/100));
         this.setCharacter(introFrameController.getCharacter());
     }
 
     public void adjInterest(float temp) {
-    	introFrameController.getCharacter().setInterest(introFrameController.getCharacter().getInterest()+temp);
-        float var=(introFrameController.getCharacter().getInterest()+temp)/100;
-        if((var>=0f)&&(var<1f)){
-            interestProgressBar.setProgress(var);
-        }
-        
+        interestProgressBar.setProgress(((Float)introFrameController.getCharacter().adjInterest(temp)/100));
         this.setCharacter(introFrameController.getCharacter());
     }
     
     public void adjactiveness(float temp) {
-    	introFrameController.getCharacter().setActiveness(introFrameController.getCharacter().getActiveness()+temp);
-        float var=(introFrameController.getCharacter().getActiveness()+temp)/100;
-        if((var>=0f)&&(var<1f)){
-            activenessProgressBar.setProgress(var);
-        }
+        activenessProgressBar.setProgress(((Float)introFrameController.getCharacter().adjActiveness(temp)/100));
         this.setCharacter(introFrameController.getCharacter());
     }
     
     public void adjIntelligence(float temp) {
-    	introFrameController.getCharacter().setIntelligence(introFrameController.getCharacter().getIntelligence()+temp);
-        float var=(introFrameController.getCharacter().getIntelligence()+temp)/100;
-        if((var>=0f)&&(var<1f)){
-            intelligenceProgressBar.setProgress(var);
-        }
+        intelligenceProgressBar.setProgress(((Float)introFrameController.getCharacter().adjIntelligence(temp)/100));
         this.setCharacter(introFrameController.getCharacter());
     }
 
     public void adjTime(float temp) {
-    	introFrameController.getCharacter().setIntelligence(introFrameController.getCharacter().getTime()+temp);
-        float var=(introFrameController.getCharacter().getTime()+temp)/100;
-        if((var>=0f)&&(var<1f)){
-            timeProgressBar.setProgress(var);
-        }
+        timeProgressBar.setProgress(((Float)introFrameController.getCharacter().adjTime(temp)/100));
+        this.setCharacter(introFrameController.getCharacter());
+    }
+
+    public void adjlectureCount(int temp){
+        introFrameController.getCharacter().adjlectureCount(temp);
         this.setCharacter(introFrameController.getCharacter());
     }
 

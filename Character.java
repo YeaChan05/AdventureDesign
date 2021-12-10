@@ -7,7 +7,7 @@ public class Character{
     private int[][] period=new int[2][8];
     private int lectureCount=0;
     private boolean electionFlag=false;
-    private int semester=0;
+    private int semester=0;//학기
     private int schoolyear=0;
     private float time=0;
     public Character() {	
@@ -47,8 +47,8 @@ public class Character{
         this.intelligence=Intelligence;
     }
 
-    public void setElectionFlag(){
-        this.electionFlag=true;
+    public void setElectionFlag(boolean electionFlag){
+        this.electionFlag=electionFlag;
     }
 
     public void setlectureCount(int lectureCount){
@@ -67,7 +67,7 @@ public class Character{
         this.schoolyear=schoolyear;
     }
 
-    public void setTime(int time){
+    public void setTime(float time){
         this.time=time;
     }
 
@@ -129,7 +129,7 @@ public class Character{
     }
 
     public float adjActiveness(float temp){
-        if((this.activeness+temp>0)||(this.activeness+temp<100)){
+        if((this.activeness+temp<0)||(this.activeness+temp>100)){
             return this.activeness;
         }
         return this.activeness+=temp;

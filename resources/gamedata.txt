@@ -1,6 +1,10 @@
-health,47.0
-activeness,51.0
-interest,1.0
+time,0.0
+health,50.0
+activeness,50.0
+interest,50.0
 money,10000
-intelligence,1.0
+intelligence,50.0
+school year,0
+semester,0
 lectureCount,0
+electionFlag,false
