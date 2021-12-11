@@ -12,7 +12,6 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class GameFrameController extends IntroFrameController{
@@ -87,6 +86,9 @@ public class GameFrameController extends IntroFrameController{
     private ProgressBar timeProgressBar;
 
     @FXML
+    private Text timeText;
+
+    @FXML
     private Button universityButton;
 
     @FXML
@@ -95,7 +97,8 @@ public class GameFrameController extends IntroFrameController{
     @FXML
     private ImageView userImageView;
 
-    
+    @FXML
+    private ImageView wallpaperImage;
 
     @FXML
     void OndowntownButton(ActionEvent event) throws IOException {
@@ -136,6 +139,13 @@ public class GameFrameController extends IntroFrameController{
         this.activenessProgressBar.setProgress((Float)(introFrameController.getCharacter().getActiveness()/100));
         this.intelligenceProgressBar.setProgress((Float)(introFrameController.getCharacter().getIntelligence()/100));
         
+        this.timeText.setText(Float.toString(((introFrameController.getCharacter().getTime()))));
+        this.healthText.setText(Float.toString(((introFrameController.getCharacter().getHealth()))));
+        this.interestText.setText(Float.toString(((introFrameController.getCharacter().getInterest()))));
+        this.activenessText.setText(Float.toString(((introFrameController.getCharacter().getActiveness()))));
+        this.intelligenceText.setText(Float.toString(((introFrameController.getCharacter().getIntelligence()))));
+
+
         assert activenessLabel != null : "fx:id=\"activenessLabel\" was not injected: check your FXML file 'GameFrame.fxml'.";
         assert activenessProgressBar != null : "fx:id=\"activenessProgressBar\" was not injected: check your FXML file 'GameFrame.fxml'.";
         assert activenessText != null : "fx:id=\"activenessText\" was not injected: check your FXML file 'GameFrame.fxml'.";
@@ -159,32 +169,38 @@ public class GameFrameController extends IntroFrameController{
         assert universityButton != null : "fx:id=\"universityButton\" was not injected: check your FXML file 'GameFrame.fxml'.";
         assert universityImageView != null : "fx:id=\"universityImageView\" was not injected: check your FXML file 'GameFrame.fxml'.";
         assert userImageView != null : "fx:id=\"userImageView\" was not injected: check your FXML file 'GameFrame.fxml'.";
-
-    }
-
-    public void adjHealth(float temp){
-        healthProgressBar.setProgress(((Float)introFrameController.getCharacter().adjHealth(temp)/100));
-        this.setCharacter(introFrameController.getCharacter());
-    }
-
-    public void adjInterest(float temp) {
-        interestProgressBar.setProgress(((Float)introFrameController.getCharacter().adjInterest(temp)/100));
-        this.setCharacter(introFrameController.getCharacter());
-    }
-    
-    public void adjactiveness(float temp) {
-        activenessProgressBar.setProgress(((Float)introFrameController.getCharacter().adjActiveness(temp)/100));
-        this.setCharacter(introFrameController.getCharacter());
-    }
-    
-    public void adjIntelligence(float temp) {
-        intelligenceProgressBar.setProgress(((Float)introFrameController.getCharacter().adjIntelligence(temp)/100));
-        this.setCharacter(introFrameController.getCharacter());
+        assert timeText != null : "fx:id=\"timeText\" was not injected: check your FXML file 'GameFrame.fxml'.";
+        assert wallpaperImage!=null : "fx:id=\"wallpaperImage\" was not injected: check your FXML file 'GameFrame.fxml'.";
     }
 
     public void adjTime(float temp) {
         timeProgressBar.setProgress(((Float)introFrameController.getCharacter().adjTime(temp)/100));
         this.setCharacter(introFrameController.getCharacter());
+        this.timeText.setText(Float.toString(((introFrameController.getCharacter().getTime()))));
+    }
+
+    public void adjHealth(float temp){
+        healthProgressBar.setProgress(((Float)introFrameController.getCharacter().adjHealth(temp)/100));
+        this.setCharacter(introFrameController.getCharacter());
+        this.healthText.setText(Float.toString(((introFrameController.getCharacter().getHealth()))));
+    }
+
+    public void adjInterest(float temp) {
+        interestProgressBar.setProgress(((Float)introFrameController.getCharacter().adjInterest(temp)/100));
+        this.setCharacter(introFrameController.getCharacter());
+        this.interestText.setText(Float.toString(((introFrameController.getCharacter().getInterest()))));
+    }
+    
+    public void adjactiveness(float temp) {
+        activenessProgressBar.setProgress(((Float)introFrameController.getCharacter().adjActiveness(temp)/100));
+        this.setCharacter(introFrameController.getCharacter());
+        this.activenessText.setText(Float.toString(((introFrameController.getCharacter().getActiveness()))));
+    }
+    
+    public void adjIntelligence(float temp) {
+        intelligenceProgressBar.setProgress(((Float)introFrameController.getCharacter().adjIntelligence(temp)/100));
+        this.setCharacter(introFrameController.getCharacter());
+        this.intelligenceText.setText(Float.toString(((introFrameController.getCharacter().getIntelligence()))));
     }
 
     public void adjlectureCount(int temp){

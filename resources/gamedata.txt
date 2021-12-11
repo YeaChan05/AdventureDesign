@@ -1,17 +1,10 @@
-<<<<<<< HEAD
-=======
-time,0.0
->>>>>>> a7fbb4c50186963fb4f105f3065373521a221e4a
-health,50.0
-activeness,50.0
-interest,50.0
+time,7.0
+health,43.0
+activeness,51.0
+interest,58.0
 money,10000
-<<<<<<< HEAD
-intelligence,0.0
-=======
-intelligence,50.0
+intelligence,58.0
 school year,0
 semester,0
->>>>>>> a7fbb4c50186963fb4f105f3065373521a221e4a
-lectureCount,0
+lectureCount,4
 electionFlag,false

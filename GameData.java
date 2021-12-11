@@ -17,14 +17,10 @@ public class GameData {
 
     public void writefile(Character character) throws IOException{
         bw= new BufferedWriter(new FileWriter(this.filepath));
-<<<<<<< HEAD
-        //체력
-=======
         
         bw.write("time,"+character.getTime());
         bw.newLine();
 
->>>>>>> a7fbb4c50186963fb4f105f3065373521a221e4a
         bw.write("health,"+character.getHealth());
         bw.newLine();
         //적극성
@@ -39,16 +35,6 @@ public class GameData {
         //지능
         bw.write("intelligence,"+character.getIntelligence());
         bw.newLine();
-<<<<<<< HEAD
-        //
-        // bw.write("period ,"+character.getPeriod().length);
-        // bw.newLine();
-        //강의 횟수
-        bw.write("lectureCount,"+character.getlectureCount());
-        bw.newLine();
-        //학생회 여부
-        // bw.write("electionFlag,"+character.getElectionFlag());
-=======
 
         bw.write("school year,"+character.getSchoolyear());
         bw.newLine();
@@ -60,7 +46,6 @@ public class GameData {
         bw.newLine();
 
         bw.write("electionFlag,"+character.getElectionFlag());
->>>>>>> a7fbb4c50186963fb4f105f3065373521a221e4a
         bw.flush();
         bw.close();
         System.out.println("writefile!!");

@@ -1,7 +1,6 @@
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -57,6 +56,7 @@ public class IntroFrameController extends Application implements EventHandler<Ac
     public void start(Stage stage) throws IOException {
         Parent root =FXMLLoader.load(getClass().getResource("IntroFrame.fxml"));
         stage.getIcons().add(new Image("file:resources/user.png"));
+        stage.setTitle("Engineer Maker");
         stage.setScene(new Scene(root));
         stage.show();
     }

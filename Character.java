@@ -10,6 +10,15 @@ public class Character{
     private int semester=0;//학기
     private int schoolyear=0;
     private float time=0;
+    private boolean majorlecture1Flag=false;
+    private boolean majorlecture2Flag=false;
+    
+
+    private boolean majorlecture3Flag=false;
+    private boolean majorlecture4Flag=false;
+    private boolean culturelecture1Flag=false;
+    private boolean culturelecture2Flag=false;
+    private boolean clubactivitiesFlag=false;
     public Character() {	
     }
 
@@ -122,7 +131,7 @@ public class Character{
 
     //기존 데이터 변경
     public float adjHealth(float temp){
-        if((this.activeness+temp<0)||(this.activeness+temp>100)){
+        if((this.health+temp<0)||(this.health+temp>100)){
             return this.health;
         }
         return this.health+=temp;
@@ -179,5 +188,64 @@ public class Character{
             return this.time;
         }
         return this.time+=temp;
+    }
+
+
+
+    
+    public boolean getMajorlecture1Flag() {
+        return majorlecture1Flag;
+    }
+
+    public void setMajorlecture1Flag(boolean majorlecture1Flag) {
+        this.majorlecture1Flag = majorlecture1Flag;
+    }
+
+    public boolean getMajorlecture2Flag() {
+        return majorlecture2Flag;
+    }
+
+    public void setMajorlecture2Flag(boolean majorlecture2Flag) {
+        this.majorlecture2Flag = majorlecture2Flag;
+    }
+
+    public boolean getMajorlecture3Flag() {
+        return majorlecture3Flag;
+    }
+
+    public void setMajorlecture3Flag(boolean majorlecture3Flag) {
+        this.majorlecture3Flag = majorlecture3Flag;
+    }
+
+    public boolean getMajorlecture4Flag() {
+        return majorlecture4Flag;
+    }
+
+    public void setMajorlecture4Flag(boolean majorlecture4Flag) {
+        this.majorlecture4Flag = majorlecture4Flag;
+    }
+
+    public boolean getCulturelecture1Flag() {
+        return culturelecture1Flag;
+    }
+
+    public void setCulturelecture1Flag(boolean culturelecture1Flag) {
+        this.culturelecture1Flag = culturelecture1Flag;
+    }
+
+    public boolean getCulturelecture2Flag() {
+        return culturelecture2Flag;
+    }
+
+    public void setCulturelecture2Flag(boolean culturelecture2Flag) {
+        this.culturelecture2Flag = culturelecture2Flag;
+    }
+
+    public boolean getClubactivitiesFlag() {
+        return clubactivitiesFlag;
+    }
+
+    public void setClubactivitiesFlag(boolean clubactivitiesFlag) {
+        this.clubactivitiesFlag = clubactivitiesFlag;
     }
 }

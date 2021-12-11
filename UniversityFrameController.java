@@ -10,6 +10,7 @@ import javafx.scene.text.Text;
 
 public class UniversityFrameController {
     private GameFrameController gameFrameController=new GameFrameController();
+    
     @FXML
     private ResourceBundle resources;
 
@@ -65,6 +66,7 @@ public class UniversityFrameController {
     @FXML
     void Onculturelecture1Button(ActionEvent event) throws IOException {
         if(culturelecture1Button.isSelected()){
+            gameFrameController.getCharacter().setCulturelecture1Flag(true);
             gameFrameController.adjHealth(-1f);
             gameFrameController.adjInterest(-0.5f);
             gameFrameController.adjIntelligence(1f);
@@ -72,13 +74,14 @@ public class UniversityFrameController {
             gameFrameController.adjlectureCount(1);
             }
         else{
+            gameFrameController.getCharacter().setCulturelecture1Flag(false);
+            culturelecture1Button.setSelected(false);
             gameFrameController.adjHealth(1f);
             gameFrameController.adjInterest(0.5f);
             gameFrameController.adjIntelligence(-1f);
             gameFrameController.adjTime(-1f);
             gameFrameController.adjlectureCount(-1);
         }
-        //System.out.println(gameFrameController.getCon().getCharacter().getHealth());
         GameData gd=new GameData("./resources/gamedata.txt");
         gd.writefile(this.getUCharacter());
     }
@@ -86,6 +89,7 @@ public class UniversityFrameController {
     @FXML
     void Onculturelecture2Button(ActionEvent event) throws IOException {
         if(culturelecture2Button.isSelected()){
+            gameFrameController.getCharacter().setCulturelecture2Flag(true);
             gameFrameController.adjHealth(-1f);
             gameFrameController.adjInterest(-0.5f);
             gameFrameController.adjIntelligence(1f);
@@ -93,13 +97,13 @@ public class UniversityFrameController {
             gameFrameController.adjlectureCount(1);
         }
         else{
+            gameFrameController.getCharacter().setCulturelecture2Flag(false);
             gameFrameController.adjHealth(1f);
             gameFrameController.adjInterest(0.5f);
             gameFrameController.adjIntelligence(-1f);
             gameFrameController.adjTime(-1f);
             gameFrameController.adjlectureCount(-1);
         }
-       // System.out.println(gameFrameController.getCon().getCharacter().getHealth());
         GameData gd=new GameData("./resources/gamedata.txt");
         gd.writefile(this.getUCharacter());
     }
@@ -109,6 +113,7 @@ public class UniversityFrameController {
     @FXML
     void Onmajorlecture1Button(ActionEvent event) throws IOException {
         if(majorlecture1Button.isSelected()){
+            gameFrameController.getCharacter().setMajorlecture1Flag(true);
             gameFrameController.adjHealth(-1f);
             gameFrameController.adjInterest(-0.5f);
             gameFrameController.adjIntelligence(1f);
@@ -116,6 +121,7 @@ public class UniversityFrameController {
             gameFrameController.adjlectureCount(1);
         }
         else{
+            gameFrameController.getCharacter().setMajorlecture1Flag(false);
             gameFrameController.adjHealth(1f);
             gameFrameController.adjInterest(0.5f);
             gameFrameController.adjIntelligence(-1f);
@@ -129,6 +135,7 @@ public class UniversityFrameController {
     @FXML
     void Onmajorlecture2Button(ActionEvent event) throws IOException {
         if(majorlecture2Button.isSelected()){
+            gameFrameController.getCharacter().setMajorlecture2Flag(true);
             gameFrameController.adjHealth(-1f);
             gameFrameController.adjInterest(-0.5f);
             gameFrameController.adjIntelligence(1f);
@@ -136,6 +143,7 @@ public class UniversityFrameController {
             gameFrameController.adjlectureCount(1);
         }
         else{
+            gameFrameController.getCharacter().setMajorlecture2Flag(false);
             gameFrameController.adjHealth(1f);
             gameFrameController.adjInterest(0.5f);
             gameFrameController.adjIntelligence(-1f);
@@ -149,6 +157,7 @@ public class UniversityFrameController {
     @FXML
     void Onmajorlecture3Button(ActionEvent event) throws IOException {
         if(majorlecture3Button.isSelected()){
+            gameFrameController.getCharacter().setMajorlecture3Flag(true);
             gameFrameController.adjHealth(-1f);
             gameFrameController.adjInterest(-0.5f);
             gameFrameController.adjIntelligence(1f);
@@ -156,6 +165,7 @@ public class UniversityFrameController {
             gameFrameController.adjlectureCount(1);
         }
         else{
+            gameFrameController.getCharacter().setMajorlecture3Flag(false);
             gameFrameController.adjHealth(1f);
             gameFrameController.adjInterest(0.5f);
             gameFrameController.adjIntelligence(-1f);
@@ -169,6 +179,7 @@ public class UniversityFrameController {
     @FXML
     void Onmajorlecture4Button(ActionEvent event) throws IOException {
         if(majorlecture4Button.isSelected()){
+            gameFrameController.getCharacter().setMajorlecture4Flag(true);
             gameFrameController.adjHealth(-1f);
             gameFrameController.adjInterest(-0.5f);
             gameFrameController.adjIntelligence(1f);
@@ -176,6 +187,7 @@ public class UniversityFrameController {
             gameFrameController.adjlectureCount(1);
         }
         else{
+            gameFrameController.getCharacter().setMajorlecture4Flag(false);
             gameFrameController.adjHealth(1f);
             gameFrameController.adjInterest(0.5f);
             gameFrameController.adjIntelligence(-1f);
@@ -186,7 +198,6 @@ public class UniversityFrameController {
         gd.writefile(this.getUCharacter());
     }
 
-    
     @FXML
     void OnstudyButton(ActionEvent event) throws IOException {
         gameFrameController.adjHealth(-1f);
@@ -201,12 +212,14 @@ public class UniversityFrameController {
     @FXML
     void OnclubactivitiesButton(ActionEvent event) throws IOException {
        if(clubactivitiesButton.isSelected()){
+            gameFrameController.getCharacter().setClubactivitiesFlag(true);
             gameFrameController.adjHealth(-1f);
             gameFrameController.adjInterest(1f);
             gameFrameController.adjactiveness(1f);
             gameFrameController.adjTime(1f);
        }
         else{
+            gameFrameController.getCharacter().setClubactivitiesFlag(false);
             gameFrameController.adjHealth(1f);
             gameFrameController.adjInterest(-1f);
             gameFrameController.adjactiveness(-1f);
@@ -218,6 +231,12 @@ public class UniversityFrameController {
 
     @FXML
     void initialize() {
+        this.culturelecture1Button.setSelected(gameFrameController.getCharacter().getCulturelecture1Flag());
+        this.culturelecture2Button.setSelected(gameFrameController.getCharacter().getCulturelecture2Flag());
+        this.majorlecture1Button.setSelected(gameFrameController.getCharacter().getMajorlecture1Flag());
+        this.majorlecture2Button.setSelected(gameFrameController.getCharacter().getMajorlecture2Flag());
+        this.majorlecture3Button.setSelected(gameFrameController.getCharacter().getMajorlecture3Flag());
+        this.majorlecture4Button.setSelected(gameFrameController.getCharacter().getMajorlecture4Flag());
         assert anchorpane != null : "fx:id=\"anchorpane\" was not injected: check your FXML file 'UniversityFrame.fxml'.";
         assert clubactivitiesButton != null : "fx:id=\"clubactivitiesButton\" was not injected: check your FXML file 'UniversityFrame.fxml'.";
         assert culturelecture1Button != null : "fx:id=\"culturelecture1Button\" was not injected: check your FXML file 'UniversityFrame.fxml'.";
@@ -230,7 +249,6 @@ public class UniversityFrameController {
         assert specialeventButton != null : "fx:id=\"specialeventButton\" was not injected: check your FXML file 'UniversityFrame.fxml'.";
         assert studyButton != null : "fx:id=\"studyButton\" was not injected: check your FXML file 'UniversityFrame.fxml'.";
         assert universityText != null : "fx:id=\"universityText\" was not injected: check your FXML file 'UniversityFrame.fxml'.";
-
     }
 
     public void setGameFrameController(GameFrameController gameFrameController){
