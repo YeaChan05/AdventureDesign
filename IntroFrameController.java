@@ -38,7 +38,7 @@ public class IntroFrameController extends Application implements EventHandler<Ac
     private Button gamestartbutton;
     
     @FXML
-    void initialize() {
+    void initialize() throws IOException {
         assert anchorpane != null : "fx:id=\"anchorpane\" was not injected: check your FXML file 'IntroFrame.fxml'.";
         assert introimage != null : "fx:id=\"introimage\" was not injected: check your FXML file 'IntroFrame.fxml'.";
         assert gamestartbutton != null : "fx:id=\"gamestartbutton\" was not injected: check your FXML file 'IntroFrame.fxml'.";
@@ -59,8 +59,6 @@ public class IntroFrameController extends Application implements EventHandler<Ac
         stage.getIcons().add(new Image("file:resources/user.png"));
         stage.setScene(new Scene(root));
         stage.show();
-        GameData gd=new GameData("./resources/gamedata.txt");
-        this.setCharacter(gd.readfile());
     }
 
     @Override
