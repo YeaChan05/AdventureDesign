@@ -27,7 +27,7 @@ public class GameData {
         bw.write("activeness,"+character.getActiveness());
         bw.newLine();
         //흥미
-        bw.write("interest,"+character.getIntelligence());
+        bw.write("interest,"+character.getInterest());
         bw.newLine();
         //돈
         bw.write("money,"+character.getMoney());
