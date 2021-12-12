@@ -7,12 +7,12 @@ public class CaculateProbability {
         this.num = num;
     }
     
-    public int Caculater(){
+    public float Caculater(){
         float previousnum=0;
         for(int i=0;i<probabilities.size();i++){
             float currentnum=probabilities.get(i);
             if((previousnum<=num)&&(num<previousnum+currentnum)){
-                return i;
+                return num;
             }
             previousnum+=currentnum;
         }
