@@ -12,6 +12,7 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+
 import javafx.stage.Stage;
 
 public class GameFrameController extends IntroFrameController{
@@ -191,7 +192,7 @@ public class GameFrameController extends IntroFrameController{
         this.interestText.setText(Float.toString(((introFrameController.getCharacter().getInterest()))));
     }
     
-    public void adjactiveness(float temp) {
+    public void adjActiveness(float temp) {
         activenessProgressBar.setProgress(((Float)introFrameController.getCharacter().adjActiveness(temp)/100));
         this.setCharacter(introFrameController.getCharacter());
         this.activenessText.setText(Float.toString(((introFrameController.getCharacter().getActiveness()))));

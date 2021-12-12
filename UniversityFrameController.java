@@ -215,14 +215,14 @@ public class UniversityFrameController {
             gameFrameController.getCharacter().setClubactivitiesFlag(true);
             gameFrameController.adjHealth(-1f);
             gameFrameController.adjInterest(1f);
-            gameFrameController.adjactiveness(1f);
+            gameFrameController.adjActiveness(1f);
             gameFrameController.adjTime(1f);
        }
         else{
             gameFrameController.getCharacter().setClubactivitiesFlag(false);
             gameFrameController.adjHealth(1f);
             gameFrameController.adjInterest(-1f);
-            gameFrameController.adjactiveness(-1f);
+            gameFrameController.adjActiveness(-1f);
             gameFrameController.adjTime(-1f);
         }
         GameData gd=new GameData("./resources/gamedata.txt");
