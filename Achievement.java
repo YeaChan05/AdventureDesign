@@ -35,9 +35,6 @@ public class Achievement {
     public int UnexpectedEvent(int a){
         return 0;
     }
-    public int HiddenEvent(int a){
-        return 0;
-    }
-    
+
     }
     
